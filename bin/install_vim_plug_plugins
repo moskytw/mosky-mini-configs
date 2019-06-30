@@ -1,4 +1,8 @@
 #!/bin/bash
 
-vim +PlugInstall +qa
-# vim +PlugUpgrade +PlugUpdate +qa
+if [[ -x $(command -v nvim) ]]; then
+    nvim +PlugInstall +qa
+else
+    vim +PlugInstall +qa
+    # vim +PlugUpgrade +PlugUpdate +qa
+fi
