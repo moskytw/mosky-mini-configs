@@ -1,5 +1,10 @@
-" use vim-plug to manage plugins, see https://github.com/junegunn/vim-plug#usage
-" for details
+" It is designed for unadorned requirements of Python development.
+"
+" Read comments for the useful keystrokes of the plugins, built-in, and custom
+" keystrokes. Use `:vert h <option name>` to get more information.
+
+
+" see https://github.com/junegunn/vim-plug#usage for more details
 call plug#begin('~/.vim/plugged')
 
 " sorted by displaying, moving, selecting, editing, and Mosky's fav
@@ -108,6 +113,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'moskytw/luthadel.vim'
 
 call plug#end()
+
 
 " enable filetype plugins
 filetype plugin on
