@@ -82,7 +82,7 @@ install :
 	
 	$(MKDIR) ~/.bashrc.d/
 	$(INSTALL) build/bashrc.d/* ~/.bashrc.d/
-	grep -F '$(BASHRC_THE_SOURCING_LINE)' ~/.bashrc || echo '$(BASHRC_THE_SOURCING_LINE)' >> ~/.bashrc
+	grep -F '$(BASHRC_THE_SOURCING_LINE)' ~/.bashrc || echo $$'\n''$(BASHRC_THE_SOURCING_LINE)' >> ~/.bashrc
 ifneq ($(ON_MAC),)
 	$(INSTALL) build/bash_profile ~/.bash_profile
 endif
