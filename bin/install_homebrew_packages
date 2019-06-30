@@ -1,0 +1,15 @@
+#!/bin/bash
+
+brew install coreutils
+brew install findutils
+brew install highlight
+brew install tree
+
+brew install tmux
+brew install git
+brew install vim
+
+brew install nmap
+
+brew install python@2
+brew install python
