@@ -6,7 +6,15 @@ ALL_RESET = \x1b[0m
 MKDIR = mkdir -p
 CP = cp
 RM = rm -rf
+ifeq ($(USER),mosky)
 INSTALL = install -m 644
+RMI = rm -rf
+PIPE_TRUE =
+else
+INSTALL = install -b -m 644
+RMI = rm -rf -i
+PIPE_TRUE = | true
+endif
 
 # NOTE: use empty string as false, so `ifneq ($VAR,)` === if bool(VAR)
 WITH_NVIM = $(shell command -v nvim)
@@ -79,5 +87,9 @@ uninstall :
 	$(RM) ~/.gitconfig
 	$(RM) ~/.tmux.conf
 	$(RM) ~/.ssh/config
-	$(RM) -i ~/.config/karabiner/assets/complex_modifications/* | true
-	$(RM) -i ~/.bashrc | true
+	$(RMI) ~/.config/karabiner/assets/complex_modifications/* $(PIPE_TRUE)
+	$(RMI) ~/.bashrc $(PIPE_TRUE)
+
+.PHONY : debug
+debug :
+	@echo $(USER)
