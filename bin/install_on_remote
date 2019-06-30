@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# ./bin/install_on_remote HOST
+# ./bin/install_on_remote HOST 'ssh -J PROXY_HOST'
+
+SSH=${2:-ssh}
+
+rsync -v -h --progress -a -e "$SSH" ../mosky-misc-configs --exclude=.git --exclude=build $1:~
+$SSH $1 << EOS
+
+patch -f --no-backup-if-mismatch -r /dev/null ~/.bashrc <(echo '115,124d114
+< 
+< # my bash configs
+< MYCONFIGS_PATH=/home/mosky/myconfigs
+< if [[ -d "\$MYCONFIGS_PATH" ]]; then
+<     for CONFIG_PATH in \$(ls \$MYCONFIGS_PATH/??_*.bash); do
+<         source \$CONFIG_PATH
+<     done
+<     unset CONFIG_PATH
+< fi
+< unset MYCONFIGS_PATH')
+rm -rf ~/myconfigs
+
+cd ~/mosky-misc-configs && \
+make && make install && \
+./bin/install_vim_plug && \
+./bin/install_vim_plug_plugins
+
+EOS
+
