@@ -44,19 +44,19 @@ build/bashrc.d/: src/bashrc.d/*
 	$(CP) $? $@
 
 # $<: the first prerequisite
-build/vimrc : src/vimrc
+build/vimrc : src/vimrc patches/vimrc_nvim.patch
 	$(CP) $< $@
 ifneq ($(WITH_NVIM),)
 	patch $@ patches/vimrc_nvim.patch
 endif
 
-build/gitconfig : src/gitconfig
+build/gitconfig : src/gitconfig patches/gitconfig_nvim.patch
 	$(CP) $< $@
 ifneq ($(WITH_NVIM),)
 	patch $@ patches/gitconfig_nvim.patch
 endif
 
-build/tmux.conf : src/tmux.conf
+build/tmux.conf : src/tmux.conf patches/tmux.conf_1.x.patch
 	$(CP) $< $@
 ifneq ($(WITH_TMUX_1_x),)
 	patch $@ patches/tmux.conf_1.x.patch
