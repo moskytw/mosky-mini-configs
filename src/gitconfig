@@ -1,0 +1,41 @@
+[user]
+
+    name = Mosky
+    email = mosky.tw@gmail.com
+    username = moskytw
+
+[alias]
+
+    st = status
+    di = diff
+    diw = diff --word-diff=color
+    dis = diff --stat
+    ad = add
+    adp = add -p
+    dic = diff --cached
+    dicw = diff --cached --word-diff=color
+    dics = diff --cached --stat
+    ci = commit
+    cim = commit -m
+    sw = show
+    sws = show --stat
+    lg = log --oneline --decorate -30
+    lgau = log --oneline --decorate -30 --author
+
+    br = branch
+    bra = branch -a
+    bravv = branch -avv
+    co = checkout
+    cob = checkout -b
+
+    amend = commit --amend
+    unstage = reset HEAD
+    uncommit = reset --soft HEAD^
+
+[rebase]
+
+    autosquash = true
+
+[merge]
+
+    tool = vimdiff
