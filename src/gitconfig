@@ -1,9 +1,3 @@
-[user]
-
-    name = Mosky
-    email = mosky.tw@gmail.com
-    username = moskytw
-
 [alias]
 
     st = status

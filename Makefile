@@ -3,10 +3,16 @@ SHELL = /bin/bash
 FG_YELLOW = \x1b[0;33m
 ALL_RESET = \x1b[0m
 
+# NOTE: use empty string as false, so `ifneq ($VAR,)` === if bool(VAR)
+USER_IS_MOSKY = $(shell whoami | grep '^mosky$$' -o)
+WITH_NVIM = $(shell command -v nvim)
+WITH_TMUX_1_x = $(shell tmux -V | grep 'tmux 1.' -o)
+ON_MAC = $(shell uname | grep 'Darwin' -o)
+
 MKDIR = mkdir -p
 CP = cp
 RM = rm -rf
-ifeq ($(USER),mosky)
+ifneq ($(USER_IS_MOSKY),)
 INSTALL = install -m 644
 RMI = rm -rf
 PIPE_TRUE =
@@ -15,11 +21,6 @@ INSTALL = install -b -m 644
 RMI = rm -rf -i
 PIPE_TRUE = | true
 endif
-
-# NOTE: use empty string as false, so `ifneq ($VAR,)` === if bool(VAR)
-WITH_NVIM = $(shell command -v nvim)
-WITH_TMUX_1_x = $(shell tmux -V | grep 'tmux 1.' -o)
-ON_MAC = $(shell uname | grep 'Darwin' -o)
 
 BASHRC_THE_SOURCING_LINE = for path in ~/.bashrc.d/*; do . $$path; done
 
@@ -50,8 +51,11 @@ ifneq ($(WITH_NVIM),)
 	patch $@ patches/vimrc_nvim.patch
 endif
 
-build/gitconfig : src/gitconfig patches/gitconfig_nvim.patch
+build/gitconfig : src/gitconfig patches/gitconfig_mosky.patch patches/gitconfig_nvim.patch
 	$(CP) $< $@
+ifneq ($(USER_IS_MOSKY),)
+	patch $@ patches/gitconfig_mosky.patch
+endif
 ifneq ($(WITH_NVIM),)
 	patch $@ patches/gitconfig_nvim.patch
 endif
