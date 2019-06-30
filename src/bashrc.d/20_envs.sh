@@ -14,7 +14,7 @@ echo_ps1_git_branch_part() {
 # \w: the currency working directory
 # \$: if the effective uid is 0, #, otherwise $
 # `\e[0;33m`: fg yellow
-# `\e[0m`: reset fg and bg
+# `\e[0m`: reset all
 PS1="\[$HOST_ALIAS_COLOR\]$HOST_ALIAS\[\e[0m\] \w"\
 "\[\e[0;33m\]"'$(echo_ps1_git_branch_part)'"\[\e[0m\] \\$ "
 
