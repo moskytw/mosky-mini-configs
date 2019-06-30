@@ -1,0 +1,4 @@
+3c3
+< call plug#begin('~/.vim/plugged')
+---
+> call plug#begin('~/.config/nvim/plugged')

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+vim +PlugInstall +qa
+# vim +PlugUpgrade +PlugUpdate +qa

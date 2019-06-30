@@ -27,6 +27,7 @@ BASHRC_THE_SOURCING_LINE = for path in ~/.bashrc.d/*; do . $$path; done
 all : build \
 	build/bashrc.d/ \
 	build/bash_profile \
+	build/vimrc \
 	build/gitconfig \
 	build/tmux.conf \
 	build/ssh_config \
@@ -42,7 +43,13 @@ build/bashrc.d/: src/bashrc.d/*
 	$(MKDIR) $@
 	$(CP) $? $@
 
-# $<: the first prerequisite, i.e., 'src/gitconfig'
+# $<: the first prerequisite
+build/vimrc : src/vimrc
+	$(CP) $< $@
+ifneq ($(WITH_NVIM),)
+	patch $@ patches/vimrc_nvim.patch
+endif
+
 build/gitconfig : src/gitconfig
 	$(CP) $< $@
 ifneq ($(WITH_NVIM),)
@@ -71,6 +78,12 @@ install :
 	$(MKDIR) ~/.bashrc.d/
 	$(INSTALL) build/bashrc.d/* ~/.bashrc.d/
 	grep -F '$(BASHRC_THE_SOURCING_LINE)' ~/.bashrc || echo '$(BASHRC_THE_SOURCING_LINE)' >> ~/.bashrc
+ifneq ($(WITH_NVIM),)
+	$(MKDIR) ~/.config/nvim
+	$(INSTALL) build/vimrc ~/.config/nvim/init.vim
+else
+	$(INSTALL) build/vimrc ~/.vimrc
+endif
 	$(INSTALL) build/gitconfig ~/.gitconfig
 	$(INSTALL) build/tmux.conf ~/.tmux.conf
 	$(INSTALL) build/ssh_config ~/.ssh/config

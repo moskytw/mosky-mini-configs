@@ -1,0 +1,360 @@
+" use vim-plug to manage plugins, see https://github.com/junegunn/vim-plug#usage
+" for details
+call plug#begin('~/.vim/plugged')
+
+" sorted by displaying, moving, selecting, editing, and Mosky's fav
+
+" --- displaying ---
+
+" use % to travel paired tags
+runtime macros/matchit.vim
+
+" highlight the matched tag
+Plug 'gregsexton/MatchTag'
+
+" " conceal lambda into λ, etc.
+" Plug 'ehamberg/vim-cute-python'
+
+" syntax
+Plug 'othree/html5.vim'
+Plug 'moskytw/nginx-contrib-vim'
+Plug 'kchmck/vim-coffee-script'
+
+" --- moving ---
+
+" use % to travel Python's if, elif, etc.
+Plug 'vim-scripts/python_match.vim'
+
+" after :map <Leader><Leader> <Plug>(easymotion-prefix)
+" <Leader><Leader>w: select a beginning of word to jump
+" <Leader><Leader>W: select a beginning of WORD to jump
+" <Leader><Leader>f: select a right char to jump
+" <Leader><Leader>F: select a left char to jump
+" <Leader><Leader>j: select a line downward to jump
+" <Leader><Leader>k: select a line forward to jump
+" and so on
+" <Leader><Leader>n: select a latest / or ? to jump
+" <Leader><Leader>N: select a latest / or ? to jump
+" <Leader><Leader>s: select a right and left char to jump
+" more: :tabnew | h easymotion | only
+" or:
+" https://github.com/easymotion/vim-easymotion/blob/master/doc/easymotion.txt
+Plug 'easymotion/vim-easymotion'
+
+" --- selecting ---
+
+" dIa: f(a, b, c) -> f(a, ,c)
+" dia: f(a, b, c) -> f(a,, c)
+" daa: f(a, b, c) -> f(a, c)
+" dAa: f(a, b, c) -> f(ac)
+" more: https://github.com/wellle/targets.vim/blob/master/cheatsheet.md
+Plug 'wellle/targets.vim'
+
+" vaI: an indent level + the above & below line -- select a Ruby function
+" vai: an indent level + the above line -- select a Python function
+" vii: an indent level -- select lines in a Ruby or Python function
+Plug 'michaeljsmith/vim-indent-object'
+
+" use +/_ to expand/shrink visual selection
+" let g:expand_region_text_objects = {
+"       \ 'iw'  :0,
+"       \ 'iW'  :0,
+"       \ 'i"'  :0,
+"       \ 'i''' :0,
+"       \ 'i]'  :1, " Support nesting of square brackets
+"       \ 'ib'  :1, " Support nesting of parentheses
+"       \ 'iB'  :1, " Support nesting of braces
+"       \ 'il'  :0, " 'inside line'. Available through https://github.com/kana/vim-textobj-line
+"       \ 'ip'  :0,
+"       \ 'ie'  :0, " 'entire file'. Available through https://github.com/kana/vim-textobj-entire
+"       \ }
+Plug 'terryma/vim-expand-region'
+
+" --- editing ---
+
+" ds"    : "word"      -> word
+" dst    : <a>word</a> -> word
+" cs'"   : 'word'      -> "word"
+" cst<a> : <p>word</p> -> <a>word</a>
+" viwS'  : word        -> 'word'
+" viwS<p>: word        -> <p>word</p>
+" ysiw'  : word        -> 'word'
+" ysiw<p>: word        -> <p>word</p>
+" yss for entire line
+Plug 'tpope/vim-surround'
+
+" ms-: multiple selection
+" enter and exit the ms-visual mode:
+"
+" <Ctrl-N>: enter with current word or visual selection
+" <ESC>   : exit
+"
+" in the ms-visual mode:
+"
+" <Ctrl-N>: add
+" <Ctrl-X>: skip
+" <Ctrl-P>: back
+" c, s    : delete all selections and go ms-insert mode
+" v       : go normal mode
+"
+" in the ms-normal mode:
+"
+" I, i, a, A: move the cursors and go ms-insert mode
+"
+Plug 'terryma/vim-multiple-cursors'
+
+" --- Mosky's ---
+
+Plug 'moskytw/luthadel.vim'
+
+call plug#end()
+
+" enable filetype plugins
+filetype plugin on
+filetype indent on
+
+" sorted by global, displaying, opening, moving, editing, and saving
+
+" -- global ---
+
+let mapleader = ','
+
+" --- displaying ---
+
+set ruler
+set number
+
+set textwidth=79
+set colorcolumn=80
+set wrap
+set linebreak
+
+set cursorline
+set showmatch
+" default off in vim, but default on in nvim
+set hlsearch
+
+set list
+set listchars=tab:▹\ ,trail:▵
+
+" pum: PopUp Menu which is triggered by Ctrl-N in insert mode
+set pumheight=16
+
+" keep space from top and bottom
+set scrolloff=2
+
+set wildmenu
+set wildignore=*.o,*~,*.pyc
+
+" ,f: toggle foldenable
+"
+" act with cursor
+"
+" zj: move to next fold
+" zk: move to prev fold
+" zo: open one fold
+" zO: open folds recursively
+" zc: close one fold
+" zC: (select multiple lines) close folds recursively
+" za: toggle one fold
+" zA: toggle folds recursively
+"
+" act on a buffer
+"
+" zx: undo manually opened and closed folds, except the cursor line
+" zX: undo manually opened and closed folds
+" zr: open one fold level: foldlevel+=1
+" zR: open all fold level: foldlevel=MAX
+" zm: close one fold level: foldlevel-=1
+" zM: close all fold level: foldlevel=0
+"
+set foldmethod=indent
+set foldnestmax=3
+set nofoldenable
+noremap <silent> <Leader>f :set foldenable!<CR>:set foldenable?<CR>
+
+" " make docstrings foldable
+" autocmd FileType python
+" \ syn region pythonString
+" \     start=+[uU]\=\z('''\|"""\)+ end="\z1" keepend
+" \     contains=pythonEscape,pythonSpaceError,pythonDoctest,@Spell
+" \     fold
+" \ |
+" \ syn region pythonRawString
+" \     start=+[uU]\=[rR]\z('''\|"""\)+ end="\z1" keepend
+" \     contains=pythonSpaceError,pythonDoctest,@Spell
+" \     fold
+
+" TODO: let foldcolumn use the char like this
+" stl: status line for current window
+" stlnc: status line for non-current window
+set fillchars=stl:\ ,stlnc:\ ,vert:\ ,fold:\ ,diff:\ 
+
+" fix the mako highlight
+autocmd BufNewFile,BufRead *.mako
+\ setlocal filetype=html
+
+syntax on
+set t_Co=256
+color luthadel
+
+" don't redraw while executing macros (good performance config)
+set lazyredraw
+
+" " vim-cute-python forgets them, you can test with
+" "
+" " a > b
+" " a < c
+" " a >= b
+" " a <= b
+" " a == b
+" " a is b
+" " a is not b
+" " not a == not b
+" "
+" autocmd FileType python
+" \ syntax match pythonOperator '\<is not\>' |
+" \ syntax match pythonOperator '<=\@!' |
+" \ syntax match pythonOperator '>=\@!'
+
+" --- opening ---
+
+" nvim: E905: Cannot set this option after startup: encoding=utf-8
+"set encoding=utf-8
+
+" buffer
+noremap <Leader>e :edit <C-R>=expand('%:p:h')<CR>/
+noremap <Leader>b :buffers<CR>:b
+noremap <Leader>d :bd<CR>
+
+" tab
+set tabpagemax=100
+noremap <Leader>t :tabedit <C-R>=expand('%:p:h')<CR>/
+" ,1 ,2 ,3: go specific tab
+for i in range(1, 9)
+    exec 'noremap <Leader>'.i.' '.i.'gt'
+endfor
+" gt: next tab
+" gT: previous tab
+
+" split
+" ,v: split vertically
+" ,h: split horizontally
+set splitright
+noremap <silent> <Leader>v :vsplit<CR>
+noremap <silent> <Leader>h :split<CR>
+
+" return to last edit position when opening files
+autocmd BufReadPost *
+\ if line("'\"") > 0 && line("'\"") <= line('$') |
+\   exe "normal! g`\"" |
+\ endif
+
+" --- moving ---
+
+" '': jump to the last place
+" ma: set mark 'a'
+" 'a: jump to mark 'a'
+" '<: go the beginning of the last selection
+" '>: go the end of the last selection
+"
+" m<jjjm>gv: mark and select
+
+" move smoothly between lines
+set whichwrap=b,s,<,>,[,]
+
+set incsearch
+" use /\C to overrule it
+set ignorecase
+" be case-sensitive when contains upper char
+set smartcase
+set nowrapscan
+
+" ,c: clear search register
+noremap <silent> <Leader>c :let @/ = ''<CR>
+
+set mouse=a
+
+" refine the arrow-keys
+noremap <down> g<down>
+noremap <up> g<up>
+noremap j gj
+noremap k gk
+
+" fix the offical python indent
+let pyindent_open_paren=0
+
+" EasyMotion
+map <Leader><Leader> <Plug>(easymotion-prefix)
+map <Leader>j <Plug>(easymotion-prefix)j
+map <Leader>k <Plug>(easymotion-prefix)k
+map <Leader>n <Plug>(easymotion-prefix)n
+map <Leader>N <Plug>(easymotion-prefix)N
+
+" --- editing ---
+
+set autoindent
+
+set shiftwidth=4
+set tabstop=4
+set expandtab
+set smarttab
+
+" TODO; refine the option
+" for gq
+set formatoptions=
+
+" configure backspace so it acts as it should act
+set backspace=eol,start,indent
+
+" ,p: toggle paste mode
+noremap <silent> <Leader>p :set paste!<CR>:set paste?<CR>
+
+" ,r: toggle registers
+noremap <silent> <Leader>r :registers<CR>:put 
+
+" ,s: toggle spelling check
+" zg: mark word as good
+" zb: mark word as bad
+" z=: list suggestions
+" ]s: move to next
+" [s: move to prev
+" ]S: move to next bad word
+" [S: move to prev bad word
+" zug: undo zg
+" zub: undo zu
+noremap <silent> <Leader>s :set spell!<CR>:set spell?<CR>
+
+" hand-made snippets
+
+autocmd FileType python
+\ noremap <Leader>i1 i#!/usr/bin/env python<CR><CR>|
+\ noremap <Leader>i2 i#!/usr/bin/env python<CR># -*- coding: utf-8 -*-<CR><CR><CR>from __future__ import division<CR>from __future__ import unicode_literals<CR>from __future__ import print_function<CR><CR><CR>|
+\ noremap <Leader>ii iif __name__ == '__main__':<CR>
+
+autocmd FileType html
+\ noremap <Leader>i1 i<!DOCTYPE html><CR><CR>
+
+" --- saving ---
+
+" don't backup
+set nobackup
+set nowb
+set noswapfile
+
+" make Ctrl-Z work in insert mode
+" pressing Ctrl-O switches to normal mode for one command
+inoremap <C-Z> <C-O><C-Z>
+
+" save
+noremap <Leader>w :w<CR>
+noremap <Leader>q :q!<CR>
+noremap <Leader>x :x<CR>
+noremap <Leader>z :w<CR><C-Z>
+noremap <Leader>W :wa<CR>
+noremap <Leader>Q :qa!<CR>
+noremap <Leader>X :xa<CR>
+noremap <Leader>Z :wa<CR><C-Z>
+noremap <Leader>!w :w !sudo tee %:p > /dev/null<CR>
+" usually we don't wanna go ex mode. just miss the leader key.
+noremap Q :qa
