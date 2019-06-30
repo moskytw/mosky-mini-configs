@@ -1,5 +1,8 @@
 SHELL = /bin/bash
 
+FG_YELLOW = \x1b[0;33m
+ALL_RESET = \x1b[0m
+
 MKDIR = mkdir -p
 CP = cp
 RM = rm -rf
@@ -66,7 +69,7 @@ install :
 ifneq ($(ON_MAC),)
 	$(INSTALL) build/bash_profile ~/.bash_profile
 	$(INSTALL) build/karabinder_complex_modifications/* ~/.config/karabiner/assets/complex_modifications/
-	echo -e "\033[0;33mCheck bin/* for more scripts.\033[0m"
+	@echo -e "$(FG_YELLOW)Check bin/* for more scripts.$(ALL_RESET)"
 endif
 
 .PHONY : uninstall
