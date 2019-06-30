@@ -18,6 +18,7 @@ all : build \
 	build/bash_profile \
 	build/gitconfig \
 	build/tmux.conf \
+	build/ssh_config \
 	build/karabinder_complex_modifications/ \
 	
 
@@ -61,6 +62,7 @@ install :
 	grep -F '$(BASHRC_THE_SOURCING_LINE)' ~/.bashrc || echo '$(BASHRC_THE_SOURCING_LINE)' >> ~/.bashrc
 	$(INSTALL) build/gitconfig ~/.gitconfig
 	$(INSTALL) build/tmux.conf ~/.tmux.conf
+	$(INSTALL) build/ssh_config ~/.ssh/config
 ifneq ($(ON_MAC),)
 	$(INSTALL) build/bash_profile ~/.bash_profile
 	$(INSTALL) build/karabinder_complex_modifications/* ~/.config/karabiner/assets/complex_modifications/
@@ -72,5 +74,6 @@ uninstall :
 	$(RM) ~/.bash_profile
 	$(RM) ~/.gitconfig
 	$(RM) ~/.tmux.conf
+	$(RM) ~/.ssh/config
 	$(RM) -i ~/.config/karabiner/assets/complex_modifications/* | true
 	$(RM) -i ~/.bashrc | true
