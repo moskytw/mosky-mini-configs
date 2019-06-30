@@ -196,7 +196,7 @@ autocmd BufNewFile,BufRead *.mako
 
 syntax on
 set t_Co=256
-color luthadel
+silent! color luthadel
 
 " don't redraw while executing macros (good performance config)
 set lazyredraw
