@@ -75,33 +75,42 @@ clean :
 
 .PHONY : install
 install :
+	
 	$(MKDIR) ~/.bashrc.d/
 	$(INSTALL) build/bashrc.d/* ~/.bashrc.d/
 	grep -F '$(BASHRC_THE_SOURCING_LINE)' ~/.bashrc || echo '$(BASHRC_THE_SOURCING_LINE)' >> ~/.bashrc
+ifneq ($(ON_MAC),)
+	$(INSTALL) build/bash_profile ~/.bash_profile
+endif
+	
 ifneq ($(WITH_NVIM),)
 	$(MKDIR) ~/.config/nvim
 	$(INSTALL) build/vimrc ~/.config/nvim/init.vim
 else
 	$(INSTALL) build/vimrc ~/.vimrc
 endif
+	
 	$(INSTALL) build/gitconfig ~/.gitconfig
 	$(INSTALL) build/tmux.conf ~/.tmux.conf
 	$(INSTALL) build/ssh_config ~/.ssh/config
+
 ifneq ($(ON_MAC),)
-	$(INSTALL) build/bash_profile ~/.bash_profile
 	$(INSTALL) build/karabinder_complex_modifications/* ~/.config/karabiner/assets/complex_modifications/
-	@echo -e "$(FG_YELLOW)Check bin/* for more scripts.$(ALL_RESET)"
 endif
+	
+	@echo -e "$(FG_YELLOW)Check bin/* for more scripts.$(ALL_RESET)"
 
 .PHONY : uninstall
 uninstall :
+	
 	$(RM) ~/.bashrc.d/*
+	$(RMI) ~/.bashrc $(PIPE_TRUE)
 	$(RM) ~/.bash_profile
+	
 	$(RM) ~/.gitconfig
 	$(RM) ~/.tmux.conf
 	$(RM) ~/.ssh/config
 	$(RMI) ~/.config/karabiner/assets/complex_modifications/* $(PIPE_TRUE)
-	$(RMI) ~/.bashrc $(PIPE_TRUE)
 
 .PHONY : debug
 debug :
