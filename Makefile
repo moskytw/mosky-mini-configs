@@ -66,6 +66,7 @@ install :
 ifneq ($(ON_MAC),)
 	$(INSTALL) build/bash_profile ~/.bash_profile
 	$(INSTALL) build/karabinder_complex_modifications/* ~/.config/karabiner/assets/complex_modifications/
+	echo -e "\033[0;33mCheck bin/* for more scripts.\033[0m"
 endif
 
 .PHONY : uninstall
