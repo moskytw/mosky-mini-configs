@@ -1,7 +1,7 @@
 SHELL = /bin/bash
 
 MKDIR = mkdir -p
-CP = cp -r
+CP = cp
 RM = rm -rf
 INSTALL = install -m 644
 
@@ -21,10 +21,15 @@ all : build \
 	build/karabinder_complex_modifications/ \
 	
 
+# $@: target, i.e., 'build'
 build :
 	$(MKDIR) $@
 
-# $@: target, i.e., 'build/gitconfig'
+# $?: the newer prerequisite
+build/bashrc.d/: src/bashrc.d/*
+	$(MKDIR) $@
+	$(CP) $? $@
+
 # $<: the first prerequisite, i.e., 'src/gitconfig'
 build/gitconfig : src/gitconfig
 	$(CP) $< $@
@@ -37,6 +42,10 @@ build/tmux.conf : src/tmux.conf
 ifneq ($(WITH_TMUX_1_x),)
 	patch $@ patches/tmux.conf_1.x.patch
 endif
+
+build/karabinder_complex_modifications/: src/karabinder_complex_modifications/*
+	$(MKDIR) $@
+	$(CP) $? $@
 
 build/% : src/%
 	$(CP) $< $@
