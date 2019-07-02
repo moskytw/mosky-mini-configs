@@ -33,7 +33,7 @@ all : build/ \
       build/ssh_config \
       build/karabinder_complex_modifications/
 
-# $@: the target, i.e., 'build'
+# $@: the target, i.e., 'build/'
 build/ :
 	$(MKDIR) $@
 
