@@ -11,29 +11,27 @@ ON_MAC = $(shell uname | grep 'Darwin' -o)
 
 MKDIR = mkdir -p
 CP = cp
+CPB = cp -b
 RM = rm -rf
-ifneq ($(USER_IS_MOSKY),)
-INSTALL = install -m 644
-RMI = rm -rf
-PIPE_TRUE =
-else
-INSTALL = install -b -m 644
 RMI = rm -rf -i
 PIPE_TRUE = | true
+ifneq ($(USER_IS_MOSKY),)
+CPB = cp
+RMI = rm -rf
+PIPE_TRUE =
 endif
 
 BASHRC_THE_SOURCING_LINE = for path in ~/.bashrc.d/*; do . $$path; done
 
 .PHONY : all
 all : build \
-	build/bashrc.d/ \
-	build/bash_profile \
-	build/vimrc \
-	build/gitconfig \
-	build/tmux.conf \
-	build/ssh_config \
-	build/karabinder_complex_modifications/ \
-	
+      build/bashrc.d/ \
+      build/bash_profile \
+      build/vimrc \
+      build/gitconfig \
+      build/tmux.conf \
+      build/ssh_config \
+      build/karabinder_complex_modifications/
 
 # $@: the target, i.e., 'build'
 build :
@@ -51,7 +49,9 @@ ifneq ($(WITH_NVIM),)
 	patch $@ patches/vimrc_nvim.patch
 endif
 
-build/gitconfig : src/gitconfig patches/gitconfig_mosky.patch patches/gitconfig_nvim.patch
+build/gitconfig : src/gitconfig \
+                  patches/gitconfig_mosky.patch \
+                  patches/gitconfig_nvim.patch
 	$(CP) $< $@
 ifneq ($(USER_IS_MOSKY),)
 	patch $@ patches/gitconfig_mosky.patch
@@ -75,34 +75,36 @@ build/% : src/%
 
 .PHONY : clean
 clean :
-	$(RM) -f build/*
+	$(RM) -f build/
 
 .PHONY : install
 install :
 	
 	$(MKDIR) ~/.bashrc.d/
-	$(INSTALL) build/bashrc.d/* ~/.bashrc.d/
-	grep -F '$(BASHRC_THE_SOURCING_LINE)' ~/.bashrc || echo $$'\n''$(BASHRC_THE_SOURCING_LINE)' >> ~/.bashrc
+	$(CPB) build/bashrc.d/* ~/.bashrc.d/
+	grep -F '$(BASHRC_THE_SOURCING_LINE)' ~/.bashrc \
+|| echo $$'\n''$(BASHRC_THE_SOURCING_LINE)' >> ~/.bashrc
 ifneq ($(ON_MAC),)
-	$(INSTALL) build/bash_profile ~/.bash_profile
+	$(CPB) build/bash_profile ~/.bash_profile
 endif
 	
 ifneq ($(WITH_NVIM),)
-	$(MKDIR) ~/.config/nvim
-	$(INSTALL) build/vimrc ~/.config/nvim/init.vim
+	$(MKDIR) ~/.config/nvim/
+	$(CPB) build/vimrc ~/.config/nvim/init.vim
 else
-	$(INSTALL) build/vimrc ~/.vimrc
+	$(CPB) build/vimrc ~/.vimrc
 endif
 	
-	$(INSTALL) build/gitconfig ~/.gitconfig
-	$(INSTALL) build/tmux.conf ~/.tmux.conf
+	$(CPB) build/gitconfig ~/.gitconfig
+	$(CPB) build/tmux.conf ~/.tmux.conf
 
 ifneq ($(ON_MAC),)
-	$(INSTALL) build/ssh_config ~/.ssh/config
+	$(CPB) build/ssh_config ~/.ssh/config
 endif
 
 ifneq ($(ON_MAC),)
-	$(INSTALL) build/karabinder_complex_modifications/* ~/.config/karabiner/assets/complex_modifications/
+	$(MKDIR) ~/.config/karabiner/assets/complex_modifications/
+	$(CPB) build/karabinder_complex_modifications/* ~/.config/karabiner/assets/complex_modifications/
 endif
 	
 	@echo -e "$(FG_YELLOW)Check bin/* for more scripts.$(ALL_RESET)"
@@ -110,7 +112,7 @@ endif
 .PHONY : uninstall
 uninstall :
 	
-	$(RM) ~/.bashrc.d/*
+	$(RM) ~/.bashrc.d/
 	$(RMI) ~/.bashrc $(PIPE_TRUE)
 	$(RM) ~/.bash_profile
 	
@@ -121,4 +123,4 @@ uninstall :
 
 .PHONY : debug
 debug :
-	@echo $(USER)
+	@echo $(CPB)
