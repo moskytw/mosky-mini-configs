@@ -15,22 +15,6 @@ RSYNC="rsync --exclude=.gitignore --exclude=.git --exclude=build -a --delete"
 $RSYNC -e "$SSH" $REPO_PATH $HOST:~
 
 $SSH $HOST '
-
-patch -f --no-backup-if-mismatch -r /dev/null ~/.bashrc <(echo '\''115,124d114
-< 
-< # my bash configs
-< MYCONFIGS_PATH=/home/mosky/myconfigs
-< if [[ -d "$MYCONFIGS_PATH" ]]; then
-<     for CONFIG_PATH in $(ls $MYCONFIGS_PATH/??_*.bash); do
-<         source $CONFIG_PATH
-<     done
-<     unset CONFIG_PATH
-< fi
-< unset MYCONFIGS_PATH'\'')
-rm -rf ~/myconfigs
-
-rm ~/.ssh/config
-
 cd ~/'"$REPO_NAME"' && \
 make && make install && \
 ./bin/install_vim_plug && \
