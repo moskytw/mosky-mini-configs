@@ -129,12 +129,26 @@ uninstall :
 	
 	$(RM) ~/.bashrc.d/
 	$(RMI) ~/.bashrc $(PIPE_TRUE)
+ifneq ($(ON_MAC),)
 	$(RM) ~/.bash_profile
+endif
+	
+ifneq ($(WITH_NVIM),)
+	$(RMI) ~/.config/nvim/init.vim
+else
+	$(RMI) ~/.vimrc
+endif
 	
 	$(RM) ~/.gitconfig
 	$(RM) ~/.tmux.conf
+	
+ifneq ($(ON_MAC),)
 	$(RM) ~/.ssh/config
+endif
+	
+ifneq ($(ON_MAC),)
 	$(RMI) ~/.config/karabiner/assets/complex_modifications/* $(PIPE_TRUE)
+endif
 
 .PHONY : debug
 debug :
