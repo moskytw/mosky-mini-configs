@@ -35,7 +35,7 @@ all : build \
 	build/karabinder_complex_modifications/ \
 	
 
-# $@: target, i.e., 'build'
+# $@: the target, i.e., 'build'
 build :
 	$(MKDIR) $@
 
