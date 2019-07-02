@@ -1,12 +1,12 @@
 #!/bin/bash
 
+# set -o verbose
+# set -o xtrace
+
 if [[ -z $1 ]]; then
     echo 'Usage: install-on-remote <repo-path> <host> [<rsync-remote-shell>]'
     exit 1
 fi
-
-# set -o verbose
-# set -o xtrace
 
 REPO_PATH=$(realpath $1)
 REPO_NAME=$(basename $REPO_PATH)
