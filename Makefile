@@ -65,13 +65,13 @@ endif
 ifneq ($(WITH_NVIM),)
 	patch $@ patches/gitconfig_nvim.patch
 endif
-
+	
 build/tmux.conf : src/tmux.conf patches/tmux.conf_1.x.patch
 	$(CP) $< $@
 ifneq ($(WITH_TMUX_1_x),)
 	patch $@ patches/tmux.conf_1.x.patch
 endif
-
+	
 build/ssh_config : src/ssh_config
 ifneq ($(ON_MAC),)
 	$(CP) $< $@
@@ -112,11 +112,11 @@ endif
 	
 	$(CPB) build/gitconfig ~/.gitconfig
 	$(CPB) build/tmux.conf ~/.tmux.conf
-
+	
 ifneq ($(ON_MAC),)
 	$(CPB) build/ssh_config ~/.ssh/config
 endif
-
+	
 ifneq ($(ON_MAC),)
 	$(MKDIR) ~/.config/karabiner/assets/complex_modifications/
 	$(CPB) build/karabinder_complex_modifications/* ~/.config/karabiner/assets/complex_modifications/
