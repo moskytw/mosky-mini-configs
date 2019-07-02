@@ -4,5 +4,4 @@ if [[ -x $(command -v nvim) ]]; then
     nvim +PlugInstall +qa > /dev/null
 else
     vim +PlugInstall +qa > /dev/null
-    # vim +PlugUpgrade +PlugUpdate +qa > /dev/null
 fi
