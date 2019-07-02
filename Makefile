@@ -24,7 +24,7 @@ endif
 BASHRC_THE_SOURCING_LINE = for path in ~/.bashrc.d/*; do . $$path; done
 
 .PHONY : all
-all : build \
+all : build/ \
       build/bashrc.d/ \
       build/bash_profile \
       build/vimrc \
@@ -34,7 +34,7 @@ all : build \
       build/karabinder_complex_modifications/
 
 # $@: the target, i.e., 'build'
-build :
+build/ :
 	$(MKDIR) $@
 
 # $?: the newer prerequisite
