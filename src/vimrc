@@ -4,7 +4,7 @@
 " keystrokes. Use `:vert h <option name>` to get more information.
 
 
-" see https://github.com/junegunn/vim-plug#usage for more details
+" see https://github.com/junegunn/vim-plug#usage for installing the plugins
 call plug#begin('~/.vim/plugged')
 
 " sorted by displaying, moving, selecting, editing, and Mosky's fav
