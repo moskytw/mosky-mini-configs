@@ -1,7 +1,9 @@
 #!/bin/bash
 
-# install_on_remote REPO_PATH HOST
-# install_on_remote REPO_PATH HOST 'ssh -J PROXY_HOST'
+if [[ -z $1 ]]; then
+    echo 'Usage: install_on_remote <repo-path> <host> [<rsync-remote-shell>]'
+    exit 1
+fi
 
 # set -o verbose
 # set -o xtrace
@@ -11,6 +13,16 @@ REPO_NAME=$(basename $REPO_PATH)
 HOST=$2
 SSH=${3:-ssh}
 RSYNC="rsync --exclude=.gitignore --exclude=.git --exclude=build -a --delete"
+
+if [[ ! -x "$REPO_PATH/bin/$(basename $0)" ]]; then
+    echo 'Bad repo path.'
+    exit 1
+fi
+
+if [[ -z "$HOST" ]]; then
+    echo 'Bad host.'
+    exit 1
+fi
 
 $RSYNC -e "$SSH" $REPO_PATH $HOST:~
 
