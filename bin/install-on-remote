@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [[ -z $1 ]]; then
-    echo 'Usage: install_on_remote <repo-path> <host> [<rsync-remote-shell>]'
+    echo 'Usage: install-on-remote <repo-path> <host> [<rsync-remote-shell>]'
     exit 1
 fi
 
@@ -29,6 +29,6 @@ $RSYNC -e "$SSH" $REPO_PATH $HOST:~
 $SSH $HOST '
 cd ~/'"$REPO_NAME"' && \
 make && make install && \
-./bin/install_vim_plug && \
-./bin/install_vim_plug_plugins
+./bin/install-vim-plug && \
+./bin/install-vim-plug-plugins
 '
