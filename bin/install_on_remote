@@ -1,32 +1,38 @@
 #!/bin/bash
 
-# ./bin/install_on_remote HOST
-# ./bin/install_on_remote HOST 'ssh -J PROXY_HOST'
+# install_on_remote REPO_PATH HOST
+# install_on_remote REPO_PATH HOST 'ssh -J PROXY_HOST'
 
-SSH=${2:-ssh}
+# set -o verbose
+# set -o xtrace
 
-rsync -v -h --progress -a -e "$SSH" ../mosky-misc-configs --exclude=.git --exclude=build $1:~
-$SSH $1 << EOS
+REPO_PATH=$(realpath $1)
+REPO_NAME=$(basename $REPO_PATH)
+HOST=$2
+SSH=${3:-ssh}
+RSYNC="rsync --exclude=.gitignore --exclude=.git --exclude=build -a --delete"
 
-patch -f --no-backup-if-mismatch -r /dev/null ~/.bashrc <(echo '115,124d114
+$RSYNC -e "$SSH" $REPO_PATH $HOST:~
+
+$SSH $HOST '
+
+patch -f --no-backup-if-mismatch -r /dev/null ~/.bashrc <(echo '\''115,124d114
 < 
 < # my bash configs
 < MYCONFIGS_PATH=/home/mosky/myconfigs
-< if [[ -d "\$MYCONFIGS_PATH" ]]; then
-<     for CONFIG_PATH in \$(ls \$MYCONFIGS_PATH/??_*.bash); do
-<         source \$CONFIG_PATH
+< if [[ -d "$MYCONFIGS_PATH" ]]; then
+<     for CONFIG_PATH in $(ls $MYCONFIGS_PATH/??_*.bash); do
+<         source $CONFIG_PATH
 <     done
 <     unset CONFIG_PATH
 < fi
-< unset MYCONFIGS_PATH')
+< unset MYCONFIGS_PATH'\'')
 rm -rf ~/myconfigs
 
 rm ~/.ssh/config
 
-cd ~/mosky-misc-configs && \
+cd ~/'"$REPO_NAME"' && \
 make && make install && \
 ./bin/install_vim_plug && \
 ./bin/install_vim_plug_plugins
-
-EOS
-
+'
