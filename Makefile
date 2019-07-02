@@ -43,6 +43,12 @@ build/bashrc.d/: src/bashrc.d/*
 	$(CP) $? $@
 
 # $<: the first prerequisite
+build/bash_profile : src/bash_profile
+ifneq ($(ON_MAC),)
+	$(CP) $< $@
+endif
+	
+
 build/vimrc : src/vimrc patches/vimrc_nvim.patch
 	$(CP) $< $@
 ifneq ($(WITH_NVIM),)
@@ -66,9 +72,18 @@ ifneq ($(WITH_TMUX_1_x),)
 	patch $@ patches/tmux.conf_1.x.patch
 endif
 
+build/ssh_config : src/ssh_config
+ifneq ($(ON_MAC),)
+	$(CP) $< $@
+endif
+	
+
 build/karabinder_complex_modifications/: src/karabinder_complex_modifications/*
+ifneq ($(ON_MAC),)
 	$(MKDIR) $@
 	$(CP) $? $@
+endif
+	
 
 build/% : src/%
 	$(CP) $< $@
@@ -124,3 +139,4 @@ uninstall :
 .PHONY : debug
 debug :
 	@echo $(CPB)
+	@echo $(ON_MAC)
