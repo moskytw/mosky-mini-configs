@@ -96,7 +96,10 @@ endif
 	
 	$(INSTALL) build/gitconfig ~/.gitconfig
 	$(INSTALL) build/tmux.conf ~/.tmux.conf
+
+ifneq ($(ON_MAC),)
 	$(INSTALL) build/ssh_config ~/.ssh/config
+endif
 
 ifneq ($(ON_MAC),)
 	$(INSTALL) build/karabinder_complex_modifications/* ~/.config/karabiner/assets/complex_modifications/

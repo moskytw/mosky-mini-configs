@@ -21,6 +21,8 @@ patch -f --no-backup-if-mismatch -r /dev/null ~/.bashrc <(echo '115,124d114
 < unset MYCONFIGS_PATH')
 rm -rf ~/myconfigs
 
+rm ~/.ssh/config
+
 cd ~/mosky-misc-configs && \
 make && make install && \
 ./bin/install_vim_plug && \
