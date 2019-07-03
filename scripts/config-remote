@@ -26,9 +26,7 @@ fi
 
 $RSYNC -e "$SSH" $REPO_PATH $HOST:~
 
-$SSH $HOST '
-cd ~/'"$REPO_NAME"' && \
-make && make install && \
-./scripts/install-vim-plug && \
-./scripts/install-vim-plug-plugins
-'
+$SSH $HOST 'cd ~/'"$REPO_NAME"' && \
+            make && make install && \
+            ./scripts/install-vim-plug && \
+            ./scripts/install-vim-plug-plugins'
