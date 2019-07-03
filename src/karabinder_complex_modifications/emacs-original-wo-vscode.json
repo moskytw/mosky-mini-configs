@@ -1,5 +1,5 @@
 {
-  "title": "Emacs key bindings (rev 12)",
+  "title": "Emacs key bindings (rev 12-wo-vscode)",
   "rules": [
     {
       "description": "Emacs key bindings [C-x key strokes] (rev 2)",
