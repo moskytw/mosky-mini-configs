@@ -14,7 +14,7 @@ HOST="$2"
 SSH="${3:-ssh}"
 RSYNC="rsync --exclude=.gitignore --exclude=.git --exclude=build -a --delete"
 
-if [[ ! -x "$REPO_PATH/bin/$(basename $0)" ]]; then
+if [[ ! -x "$REPO_PATH/scripts/$(basename $0)" ]]; then
     echo 'Bad repo path.'
     exit 1
 fi
@@ -29,6 +29,6 @@ $RSYNC -e "$SSH" $REPO_PATH $HOST:~
 $SSH $HOST '
 cd ~/'"$REPO_NAME"' && \
 make && make install && \
-./bin/install-vim-plug && \
-./bin/install-vim-plug-plugins
+./scripts/install-vim-plug && \
+./scripts/install-vim-plug-plugins
 '

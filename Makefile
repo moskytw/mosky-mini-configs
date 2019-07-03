@@ -122,7 +122,7 @@ ifneq ($(ON_MAC),)
 	$(CPB) build/karabinder_complex_modifications/* ~/.config/karabiner/assets/complex_modifications/
 endif
 	
-	@echo -e "$(FG_YELLOW)Check bin/* for more scripts.$(ALL_RESET)"
+	@echo -e "$(FG_YELLOW)Check scripts/* for more scripts.$(ALL_RESET)"
 
 .PHONY : uninstall
 uninstall :
