@@ -28,12 +28,12 @@ alias ge='g -E'
 # -n: line number
 # -H: filename
 alias gr="g -R \
-    --binary-files=without-match \
-    --exclude-dir __pycache__ \
-    --exclude-dir .ipynb_checkpoints \
-    --exclude-dir .mypy_cache \
-    --exclude-dir .git \
-    -s -n -H"
+          --binary-files=without-match \
+          --exclude-dir __pycache__ \
+          --exclude-dir .ipynb_checkpoints \
+          --exclude-dir .mypy_cache \
+          --exclude-dir .git \
+          -s -n -H"
 
 alias ga='g --color=always'
 alias gfa='gf --color=always'
@@ -50,12 +50,12 @@ alias ll='ls -aFh -l'
 # grep-style find
 fr() {
     find -L "${@:2}" \
-        -not -path '*.pyc' \
-        -not -path '*/__pycache__/*' \
-        -not -path '*/.ipynb_checkpoints/*' \
-        -not -path '*/.mypy_cache/*' \
-        -not -path '*/.git/*' \
-        -path "*$1*"
+         -not -path '*.pyc' \
+         -not -path '*/__pycache__/*' \
+         -not -path '*/.ipynb_checkpoints/*' \
+         -not -path '*/.mypy_cache/*' \
+         -not -path '*/.git/*' \
+         -path "*$1*"
 }
 
 alias ..='cd ..'
