@@ -31,7 +31,7 @@ all : build/ \
       build/gitconfig \
       build/tmux.conf \
       build/ssh_config \
-      build/karabinder_complex_modifications/
+      build/karabinder_bash_emacs.json
 
 # $@: the target, i.e., 'build/'
 build/ :
@@ -78,13 +78,6 @@ ifneq ($(ON_MAC),)
 endif
 	
 
-build/karabinder_complex_modifications/: src/karabinder_complex_modifications/*
-ifneq ($(ON_MAC),)
-	$(MKDIR) $@
-	$(CP) $? $@
-endif
-	
-
 build/% : src/%
 	$(CP) $< $@
 
@@ -119,7 +112,7 @@ endif
 	
 ifneq ($(ON_MAC),)
 	$(MKDIR) ~/.config/karabiner/assets/complex_modifications/
-	$(CPB) build/karabinder_complex_modifications/* ~/.config/karabiner/assets/complex_modifications/
+	$(CPB) build/karabinder_bash_emacs.json ~/.config/karabiner/assets/complex_modifications/bash_emacs.json
 endif
 	
 	@echo -e "$(FG_YELLOW)Check scripts/* for more scripts.$(ALL_RESET)"
@@ -147,7 +140,7 @@ ifneq ($(ON_MAC),)
 endif
 	
 ifneq ($(ON_MAC),)
-	$(RMI) ~/.config/karabiner/assets/complex_modifications/* $(PIPE_TRUE)
+	$(RM) ~/.config/karabiner/assets/complex_modifications/bash_emacs.json
 endif
 
 .PHONY : debug
