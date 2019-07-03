@@ -8,10 +8,10 @@ if [[ -z $1 ]]; then
     exit 1
 fi
 
-REPO_PATH=$(realpath $1)
-REPO_NAME=$(basename $REPO_PATH)
-HOST=$2
-SSH=${3:-ssh}
+REPO_PATH="$(realpath $1)"
+REPO_NAME="$(basename $REPO_PATH)"
+HOST="$2"
+SSH="${3:-ssh}"
 RSYNC="rsync --exclude=.gitignore --exclude=.git --exclude=build -a --delete"
 
 if [[ ! -x "$REPO_PATH/bin/$(basename $0)" ]]; then
