@@ -4,7 +4,7 @@
 # set -o xtrace
 
 if [[ -z $1 ]]; then
-    echo 'Usage: install-on-remote <repo-path> <host> [<rsync-remote-shell>]'
+    echo 'Usage: config-remote <repo-path> <host> [<rsync-remote-shell>]'
     exit 1
 fi
 
