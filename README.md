@@ -53,6 +53,42 @@ has super detailed comments. 📚
 
 ## The Karabinder Config
 
-TBC.
+The emacs-style keystrokes — more precisely, some of them are control chars —
+in Bash keep your hand in the center of keyboard. It feels so good to minimize
+the moving of fingers. The macOS supports partially.  This config ports them
+all via [Karabinder](https://pqrs.org/osx/karabiner/)!
+
+Believe me, you will fall in love with it. 😁
+
+| Emacs-Style | Default       | Note                 |
+| ----------- | ------------- | -------------------- |
+| Ctrl-I      | Tab           |                      |
+| Ctrl-J      | Return        |                      |
+| Ctrl-M      | Return        |                      |
+| Ctrl-[      | Esc           |                      |
+| Ctrl-H      | Delete        | Delete a char        |
+| Ctrl-D      | Fn-Delete     |                      |
+| Ctrl-W      | Opt-Delete    | Delete a word        |
+| Opt-D       | Fn-Opt-Delete |                      |
+| Ctrl-U      | Cmd-Delete    | Delete within a line |
+| Ctrl-K      | Fn-Cmd-Delete |                      |
+| Ctrl-B      | Left          | Move by a char       |
+| Ctrl-F      | Right         |                      |
+| Opt-B       | Opt-Left      | Move by a word       |
+| Opt-F       | Opt-Right     |                      |
+| Ctrl-A      | Cmd-Left      | Move within a line   |
+| Ctrl-E      | Cmd-Right     |                      |
+| Ctrl-P      | Up            | Move by a line       |
+| Ctrl-N      | Down          |                      |
+
+You can use the
+[karabinder_bash_emacs.json](https://github.com/moskytw/mosky-mini-configs/blob/master/src/karabinder_bash_emacs.json)
+alone by:
+
+```bash
+$ cp karabinder_bash_emacs.json ~/.config/karabiner/assets/complex_modifications/bash_emacs.json
+```
+
+And then enable it in Preferences > Complex Modifications > Add rule.
 
 Hope it helps!
