@@ -3,11 +3,10 @@
 " Read comments for the useful keystrokes of the plugins, built-in, and custom
 " keystrokes. Use `:vert h <option name>` to get more information.
 
-
 " see https://github.com/junegunn/vim-plug#usage for installing the plugins
 call plug#begin('~/.vim/plugged')
 
-" sorted by displaying, moving, selecting, editing, and Mosky's fav
+" sorted by displaying, moving, selecting, editing, and Mosky's
 
 " --- displaying ---
 
@@ -16,9 +15,6 @@ runtime macros/matchit.vim
 
 " highlight the matched tag
 Plug 'gregsexton/MatchTag'
-
-" " conceal lambda into λ, etc.
-" Plug 'ehamberg/vim-cute-python'
 
 " syntax
 Plug 'othree/html5.vim'
@@ -114,14 +110,13 @@ Plug 'moskytw/luthadel.vim'
 
 call plug#end()
 
+" sorted by global, displaying, opening, moving, editing, and saving
+
+" -- global ---
 
 " enable filetype plugins
 filetype plugin on
 filetype indent on
-
-" sorted by global, displaying, opening, moving, editing, and saving
-
-" -- global ---
 
 let mapleader = ','
 
@@ -179,18 +174,6 @@ set foldnestmax=3
 set nofoldenable
 noremap <silent> <Leader>f :set foldenable!<CR>:set foldenable?<CR>
 
-" " make docstrings foldable
-" autocmd FileType python
-" \ syn region pythonString
-" \     start=+[uU]\=\z('''\|"""\)+ end="\z1" keepend
-" \     contains=pythonEscape,pythonSpaceError,pythonDoctest,@Spell
-" \     fold
-" \ |
-" \ syn region pythonRawString
-" \     start=+[uU]\=[rR]\z('''\|"""\)+ end="\z1" keepend
-" \     contains=pythonSpaceError,pythonDoctest,@Spell
-" \     fold
-
 " TODO: let foldcolumn use the char like this
 " stl: status line for current window
 " stlnc: status line for non-current window
@@ -206,22 +189,6 @@ silent! color luthadel
 
 " don't redraw while executing macros (good performance config)
 set lazyredraw
-
-" " vim-cute-python forgets them, you can test with
-" "
-" " a > b
-" " a < c
-" " a >= b
-" " a <= b
-" " a == b
-" " a is b
-" " a is not b
-" " not a == not b
-" "
-" autocmd FileType python
-" \ syntax match pythonOperator '\<is not\>' |
-" \ syntax match pythonOperator '<=\@!' |
-" \ syntax match pythonOperator '>=\@!'
 
 " --- opening ---
 
