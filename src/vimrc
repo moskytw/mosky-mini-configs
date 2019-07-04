@@ -11,7 +11,7 @@ runtime macros/matchit.vim
 " highlight the matched tag
 Plug 'gregsexton/MatchTag'
 
-" syntax
+" syntax plugins
 Plug 'othree/html5.vim'
 Plug 'moskytw/nginx-contrib-vim'
 Plug 'kchmck/vim-coffee-script'
@@ -22,18 +22,21 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'vim-scripts/python_match.vim'
 
 " after :map <Leader><Leader> <Plug>(easymotion-prefix)
+"
 " <Leader><Leader>w: select a beginning of word to jump
 " <Leader><Leader>W: select a beginning of WORD to jump
 " <Leader><Leader>f: select a right char to jump
 " <Leader><Leader>F: select a left char to jump
+" <Leader><Leader>s: select a right and left char to jump
+"
 " <Leader><Leader>j: select a line downward to jump
 " <Leader><Leader>k: select a line forward to jump
-" and so on
 " <Leader><Leader>n: select a latest / or ? to jump
 " <Leader><Leader>N: select a latest / or ? to jump
-" <Leader><Leader>s: select a right and left char to jump
-" more: :tabnew | h easymotion | only
-" or:
+"
+" more:
+"
+" :tabnew | h easymotion | only
 " https://github.com/easymotion/vim-easymotion/blob/master/doc/easymotion.txt
 Plug 'easymotion/vim-easymotion'
 
@@ -43,6 +46,7 @@ Plug 'easymotion/vim-easymotion'
 " dia: f(a, b, c) -> f(a,, c)
 " daa: f(a, b, c) -> f(a, c)
 " dAa: f(a, b, c) -> f(ac)
+"
 " more: https://github.com/wellle/targets.vim/blob/master/cheatsheet.md
 Plug 'wellle/targets.vim'
 
@@ -268,7 +272,7 @@ set tabstop=4
 set expandtab
 set smarttab
 
-" TODO; refine the option
+" TODO: refine the option
 " for gq
 set formatoptions=
 
