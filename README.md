@@ -15,7 +15,7 @@ It includes:
    for unadorned requirements of Python development.
 4. My [Bash, Git, SSH, and tmux](https://github.com/moskytw/mosky-mini-configs/tree/master/src)
    configs.
-5. My [Karabinder config](https://github.com/moskytw/mosky-mini-configs/tree/master/src/karabinder_bash_emacs.json)
+5. My [Karabinder config](https://github.com/moskytw/mosky-mini-configs#the-karabinder-config)
    which ports the Bash keystrokes to the whole macOS.
 
 ## The Makefile
