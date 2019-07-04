@@ -1,8 +1,8 @@
 # The Configs from a Minimalist
 
 It's easy to get lost in the Unix configuration world. So many fancy choices!
-After working on Linux and macOS many years, I converged my configs into a
-minimal set, which is good enough, comprehensive, portable, and may be
+After working on Linux and macOS so many years, I converged my configs into a
+minimal set, which is just good enough, comprehensive, portable, and may be
 inspirational to you. ✨
 
 It includes:
@@ -16,7 +16,7 @@ It includes:
 4. My [Bash, Git, SSH, and tmux](https://github.com/moskytw/mosky-mini-configs/tree/master/src)
    configs.
 5. My [Karabinder config](https://github.com/moskytw/mosky-mini-configs/tree/master/src/karabinder_bash_emacs.json)
-   to port the Bash keystrokes to the whole macOS.
+   which ports the Bash keystrokes to the whole macOS.
 
 ## The Makefile
 
@@ -41,10 +41,11 @@ is:
 
 ```bash
 $ config-remote mosky-mini-configs mosky.tw
+$ config-remote mosky-mini-configs ...
 ```
 
-I wrote another private script to deploy my configs on bunch of servers.
-Awesome. 😎
+I wrote another private script to deploy my configs on bunch of servers in
+minutes. Awesome. 😎
 
 ## The Vimrc
 
@@ -91,4 +92,4 @@ $ cp karabinder_bash_emacs.json ~/.config/karabiner/assets/complex_modifications
 
 And then enable it in Preferences > Complex Modifications > Add rule.
 
-Hope it helps!
+Hope my configs help! ❤️
