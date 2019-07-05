@@ -127,9 +127,9 @@ ifneq ($(ON_MAC),)
 endif
 	
 ifneq ($(WITH_NVIM),)
-	$(RMI) ~/.config/nvim/init.vim
+	$(RM) ~/.config/nvim/init.vim
 else
-	$(RMI) ~/.vimrc
+	$(RM) ~/.vimrc
 endif
 	
 	$(RM) ~/.gitconfig
