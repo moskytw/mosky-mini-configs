@@ -1,5 +1,6 @@
+# for macOS client
 Host *
     # use macOS's keychain
     UseKeychain yes
-    # when WLAN is unstable, just break the connections
+    # when WLAN is unstable, don't hang on there, just break the connection
     ServerAliveInterval 60
