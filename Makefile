@@ -37,7 +37,7 @@ all : build/ \
 build/ :
 	$(MKDIR) $@
 
-# $?: the newer prerequisite
+# $?: the newer prerequisites
 build/bashrc.d/: src/bashrc.d/*
 	$(MKDIR) $@
 	$(CP) $? $@
