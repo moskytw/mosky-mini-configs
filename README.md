@@ -66,7 +66,7 @@ Believe me, you will fall in love with it. 😁
 | Ctrl-I      | Tab           |                      |
 | Ctrl-J      | Return        |                      |
 | Ctrl-M      | Return        |                      |
-| Ctrl-[      | Esc           |                      |
+| Ctrl-\[      | Esc           |                      |
 | Ctrl-H      | Delete        | Delete a char        |
 | Ctrl-D      | Fn-Delete     |                      |
 | Ctrl-W      | Opt-Delete    | Delete a word        |
@@ -82,14 +82,14 @@ Believe me, you will fall in love with it. 😁
 | Ctrl-P      | Up            | Move by a line       |
 | Ctrl-N      | Down          |                      |
 
-You can use the
+After install, enable it in Preferences > Complex Modifications > Add rule.
+
+You also can install
 [karabinder_bash_emacs.json](https://github.com/moskytw/mosky-mini-configs/blob/master/src/karabinder_bash_emacs.json)
 alone by:
 
 ```bash
 $ cp karabinder_bash_emacs.json ~/.config/karabiner/assets/complex_modifications/bash_emacs.json
 ```
-
-And then enable it in Preferences > Complex Modifications > Add rule.
 
 Hope my configs help! ❤️
