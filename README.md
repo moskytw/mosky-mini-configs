@@ -54,7 +54,7 @@ has super detailed comments. 📚
 
 ## The Karabinder Config
 
-The emacs-style keystrokes — more precisely, some of them are control chars —
+The emacs-style keystrokes – more precisely, some of them are control chars – 
 in Bash keep your hand in the center of keyboard. It feels so good to minimize
 the moving of fingers. The macOS supports partially.  This config ports them
 all via [Karabinder](https://pqrs.org/osx/karabiner/)!
