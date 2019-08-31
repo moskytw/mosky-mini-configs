@@ -1,7 +1,7 @@
 SHELL = /bin/bash
 
-FG_YELLOW = \x1b[0;33m
-ALL_RESET = \x1b[0m
+# FG_YELLOW = \x1b[0;33m
+# ALL_RESET = \x1b[0m
 
 # NOTE: use empty string as false, so `ifneq ($VAR,)` === if bool(VAR)
 USER_IS_MOSKY = $(shell whoami | grep '^mosky$$' -o)
@@ -115,8 +115,6 @@ ifneq ($(ON_MAC),)
 	$(CPB) build/karabinder_bash_emacs.json ~/.config/karabiner/assets/complex_modifications/bash_emacs.json
 endif
 	
-	@echo -e "$(FG_YELLOW)Check scripts/* for more scripts.$(ALL_RESET)"
-
 .PHONY: uninstall
 uninstall:
 	
@@ -142,6 +140,16 @@ endif
 ifneq ($(ON_MAC),)
 	$(RM) ~/.config/karabiner/assets/complex_modifications/bash_emacs.json
 endif
+
+.PHONY: config
+config:
+ifneq ($(ON_MAC),)
+	./scripts/install-homebrew || true
+	./scripts/install-homebrew-formulas || true
+	./scripts/install-pip-packages || true
+endif
+	./scripts/install-vim-plug || true
+	./scripts/install-vim-plug-plugins || true
 
 .PHONY: debug
 debug:
