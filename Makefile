@@ -23,8 +23,8 @@ endif
 
 BASHRC_THE_SOURCING_LINE = for path in ~/.bashrc.d/*; do . $$path; done
 
-.PHONY : all
-all : build/ \
+.PHONY: all
+all: build/ \
       build/bashrc.d/ \
       build/bash_profile \
       build/vimrc \
@@ -34,7 +34,7 @@ all : build/ \
       build/karabinder_bash_emacs.json
 
 # $@: the target, i.e., 'build/'
-build/ :
+build/:
 	$(MKDIR) $@
 
 # $?: the newer prerequisites
@@ -43,19 +43,19 @@ build/bashrc.d/: configs/bashrc.d/*
 	$(CP) $? $@
 
 # $<: the first prerequisite
-build/bash_profile : configs/bash_profile
+build/bash_profile: configs/bash_profile
 ifneq ($(ON_MAC),)
 	$(CP) $< $@
 endif
 	
 
-build/vimrc : configs/vimrc patches/vimrc_nvim.patch
+build/vimrc: configs/vimrc patches/vimrc_nvim.patch
 	$(CP) $< $@
 ifneq ($(WITH_NVIM),)
 	patch $@ patches/vimrc_nvim.patch
 endif
 
-build/gitconfig : configs/gitconfig \
+build/gitconfig: configs/gitconfig \
                   patches/gitconfig_mosky.patch \
                   patches/gitconfig_nvim.patch
 	$(CP) $< $@
@@ -66,27 +66,27 @@ ifneq ($(WITH_NVIM),)
 	patch $@ patches/gitconfig_nvim.patch
 endif
 	
-build/tmux.conf : configs/tmux.conf patches/tmux.conf_1.x.patch
+build/tmux.conf: configs/tmux.conf patches/tmux.conf_1.x.patch
 	$(CP) $< $@
 ifneq ($(WITH_TMUX_1_x),)
 	patch $@ patches/tmux.conf_1.x.patch
 endif
 	
-build/ssh_config : configs/ssh_config
+build/ssh_config: configs/ssh_config
 ifneq ($(ON_MAC),)
 	$(CP) $< $@
 endif
 	
 
-build/% : configs/%
+build/%: configs/%
 	$(CP) $< $@
 
-.PHONY : clean
-clean :
+.PHONY: clean
+clean:
 	$(RM) -f build/
 
-.PHONY : install
-install :
+.PHONY: install
+install:
 	
 	$(MKDIR) ~/.bashrc.d/
 	$(CPB) build/bashrc.d/* ~/.bashrc.d/
@@ -117,8 +117,8 @@ endif
 	
 	@echo -e "$(FG_YELLOW)Check scripts/* for more scripts.$(ALL_RESET)"
 
-.PHONY : uninstall
-uninstall :
+.PHONY: uninstall
+uninstall:
 	
 	$(RM) ~/.bashrc.d/
 	$(RMI) ~/.bashrc $(PIPE_TRUE)
@@ -143,7 +143,7 @@ ifneq ($(ON_MAC),)
 	$(RM) ~/.config/karabiner/assets/complex_modifications/bash_emacs.json
 endif
 
-.PHONY : debug
-debug :
+.PHONY: debug
+debug:
 	@echo $(CPB)
 	@echo $(ON_MAC)
