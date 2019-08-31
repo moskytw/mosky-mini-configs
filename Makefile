@@ -151,6 +151,10 @@ endif
 	./scripts/install-vim-plug || true
 	./scripts/install-vim-plug-plugins || true
 
+.PHONY: config
+config:
+	./scripts/config . '$(HOST)' '$(REMOTE_SHELL)'
+
 .PHONY: debug
 debug:
 	@echo $(CPB)
