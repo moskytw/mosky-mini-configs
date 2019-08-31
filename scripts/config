@@ -8,7 +8,8 @@ if [[ -z $1 ]]; then
     exit 1
 fi
 
-REPO_PATH="$(realpath $1)"
+# REPO_PATH="$(realpath $1)"
+REPO_PATH="$(readlink -f $1)"
 REPO_NAME="$(basename $REPO_PATH)"
 HOST="$2"
 REMOTE_SHELL="$3"
