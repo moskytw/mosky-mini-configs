@@ -8,53 +8,64 @@ inspirational to you. ✨
 It includes:
 
 1. A [Makefile](https://github.com/moskytw/mosky-mini-configs/blob/master/Makefile)
-   to install the configs into system.
-2. The [scripts](https://github.com/moskytw/mosky-mini-configs/tree/master/scripts)
+   to configure local and even remote machine.
    to set up a system, and even config a remote machine.
-3. My [vimrc](https://github.com/moskytw/mosky-mini-configs/tree/master/src/vimrc)
+2. My [vimrc](https://github.com/moskytw/mosky-mini-configs/tree/master/configs/vimrc)
    for unadorned requirements of Python development.
-4. My [Bash, Git, SSH, and tmux](https://github.com/moskytw/mosky-mini-configs/tree/master/src)
+3. My [Bash, Git, SSH, and tmux](https://github.com/moskytw/mosky-mini-configs/tree/master/configs)
    configs.
-5. My [Karabinder config](https://github.com/moskytw/mosky-mini-configs#the-karabinder-config)
+4. My [Karabinder config](https://github.com/moskytw/mosky-mini-configs#the-karabinder-config)
    which ports the Bash keystrokes to the whole macOS.
 
 ## The Makefile
 
-The
-[Makefile](https://github.com/moskytw/mosky-mini-configs/blob/master/Makefile)
-copies and patches out the correct version of the configs, like Vim or Neovim,
-tmux 1.x or 2.x, and installs them into system. It also supports to uninstall.
+The Makefile integrated all of the functionalities including copying and
+patching out the correct version of the configs, like Vim or Neovim, tmux 1.x
+or 2.x, installing them into system, and installing extra packages, etc.
+
+```bash
+$ make config
+```
+
+The _config_ is an all-in-one target to configure the local machine, which is
+equivalent to:
 
 ```bash
 $ make
 $ make install
-$ make uninstall
+$ make extra-install
 ```
 
-You may not want to use my configs exactly, but it may be a good template to
-write your own.
-
-## The Scripts
-
-My favorite in [the scripts](https://github.com/moskytw/mosky-mini-configs/tree/master/scripts)
-is:
+The _extra-install_ target executes
+[scripts/install-\*](https://github.com/moskytw/mosky-mini-configs/tree/master/scripts)
+to install the extra packages. On Linux, it only executes
+[scripts/install-vim-plug\*](https://github.com/moskytw/mosky-mini-configs/tree/master/scripts).
 
 ```bash
-$ config-remote mosky-mini-configs mosky.tw
-$ config-remote mosky-mini-configs ...
+$ make config HOST=mosky.tw
 ```
 
-I wrote another private script to deploy my configs on bunch of servers in
-minutes. Awesome. 😎
+The _config_ target also supports to configure a remote machine.
+
+```bash
+$ make config HOST=mosky.node.mydns REMOTE_SHELL='ssh -J mosky.tw'
+```
+
+The _config_ target even supports the remote shell of rsync. I wrote another
+private script to configure bunch of servers. Awesome. 😎
+
+The Makefile also have an _uninstall_ target. The target removes, not restores,
+the configs installed by _install_ and won't uninstall the packages installed
+by _extra-install_.
 
 ## The Vimrc
 
-The [vimrc](https://github.com/moskytw/mosky-mini-configs/tree/master/src/vimrc)
+The [vimrc](https://github.com/moskytw/mosky-mini-configs/tree/master/configs/vimrc)
 has super detailed comments. 📚
 
 ## The Karabinder Config
 
-The emacs-style keystrokes – more precisely, some of them are control chars – 
+The emacs-style keystrokes – more precisely, some of them are control chars –
 in Bash keep your hand in the center of keyboard. It feels so good to minimize
 the moving of fingers. The macOS supports partially.  This config ports them
 all via [Karabinder](https://pqrs.org/osx/karabiner/)!
@@ -66,7 +77,7 @@ Believe me, you will fall in love with it. 😁
 | Ctrl-I      | Tab           |                      |
 | Ctrl-J      | Return        |                      |
 | Ctrl-M      | Return        |                      |
-| Ctrl-\[      | Esc           |                      |
+| Ctrl-\[     | Esc           |                      |
 | Ctrl-H      | Delete        | Delete a char        |
 | Ctrl-D      | Fn-Delete     |                      |
 | Ctrl-W      | Opt-Delete    | Delete a word        |
@@ -85,11 +96,11 @@ Believe me, you will fall in love with it. 😁
 After install, enable it in Preferences > Complex Modifications > Add rule.
 
 You also can install
-[karabinder_bash_emacs.json](https://github.com/moskytw/mosky-mini-configs/blob/master/src/karabinder_bash_emacs.json)
+[configs/karabinder_bash_emacs.json](https://github.com/moskytw/mosky-mini-configs/blob/master/configs/karabinder_bash_emacs.json)
 alone by:
 
 ```bash
-$ cp karabinder_bash_emacs.json ~/.config/karabiner/assets/complex_modifications/bash_emacs.json
+$ cp configs/karabinder_bash_emacs.json ~/.config/karabiner/assets/complex_modifications/bash_emacs.json
 ```
 
 Hope my configs help! ❤️
