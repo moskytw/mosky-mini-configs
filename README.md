@@ -8,8 +8,7 @@ inspirational to you. ✨
 It includes:
 
 1. A [Makefile](https://github.com/moskytw/mosky-mini-configs/blob/master/Makefile)
-   to configure local and even remote machine.
-   to set up a system, and even config a remote machine.
+   which can configure a local and even a remote machine.
 2. My [vimrc](https://github.com/moskytw/mosky-mini-configs/tree/master/configs/vimrc)
    for unadorned requirements of Python development.
 3. My [Bash, Git, SSH, and tmux](https://github.com/moskytw/mosky-mini-configs/tree/master/configs)
@@ -54,7 +53,7 @@ $ make config HOST=mosky.node.mydns REMOTE_SHELL='ssh -J mosky.tw'
 The _config_ target even supports the remote shell of rsync. I wrote another
 private script to configure bunch of servers. Awesome. 😎
 
-The Makefile also have an _uninstall_ target. The target removes, not restores,
+The Makefile also has an _uninstall_ target. The target removes, not restores,
 the configs installed by _install_ and won't uninstall the packages installed
 by _extra-install_.
 
