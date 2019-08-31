@@ -12,7 +12,7 @@ REPO_PATH="$(realpath $1)"
 REPO_NAME="$(basename $REPO_PATH)"
 HOST="$2"
 REMOTE_SHELL="$3"
-RSYNC="rsync --exclude=.gitignore --exclude=.git --exclude=build -a --delete"
+RSYNC="rsync --exclude=.gitignore --exclude=.git --exclude=build -a"
 
 if [[ ! -x "$REPO_PATH/scripts/$(basename $0)" ]]; then
     echo 'Bad repo path.'
