@@ -14,11 +14,11 @@ CP = cp
 CPB = cp -b
 RM = rm -rf
 RMI = rm -rf -i
-PIPE_TRUE = | true
+OR_TRUE = || true
 ifneq ($(USER_IS_MOSKY),)
 CPB = cp
 RMI = rm -rf
-PIPE_TRUE =
+OR_TRUE =
 endif
 
 BASHRC_THE_SOURCING_LINE = for path in ~/.bashrc.d/*; do . $$path; done
@@ -121,7 +121,7 @@ endif
 uninstall:
 	
 	$(RM) ~/.bashrc.d/
-	$(RMI) ~/.bashrc $(PIPE_TRUE)
+	$(RMI) ~/.bashrc $(OR_TRUE)
 ifneq ($(ON_MAC),)
 	$(RM) ~/.bash_profile
 endif
