@@ -141,8 +141,8 @@ ifneq ($(ON_MAC),)
 	$(RM) ~/.config/karabiner/assets/complex_modifications/bash_emacs.json
 endif
 
-.PHONY: config
-config:
+.PHONY: extra-install
+extra-install:
 ifneq ($(ON_MAC),)
 	./scripts/install-homebrew || true
 	./scripts/install-homebrew-formulas || true
