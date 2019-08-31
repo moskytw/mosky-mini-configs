@@ -38,24 +38,24 @@ build/ :
 	$(MKDIR) $@
 
 # $?: the newer prerequisites
-build/bashrc.d/: src/bashrc.d/*
+build/bashrc.d/: configs/bashrc.d/*
 	$(MKDIR) $@
 	$(CP) $? $@
 
 # $<: the first prerequisite
-build/bash_profile : src/bash_profile
+build/bash_profile : configs/bash_profile
 ifneq ($(ON_MAC),)
 	$(CP) $< $@
 endif
 	
 
-build/vimrc : src/vimrc patches/vimrc_nvim.patch
+build/vimrc : configs/vimrc patches/vimrc_nvim.patch
 	$(CP) $< $@
 ifneq ($(WITH_NVIM),)
 	patch $@ patches/vimrc_nvim.patch
 endif
 
-build/gitconfig : src/gitconfig \
+build/gitconfig : configs/gitconfig \
                   patches/gitconfig_mosky.patch \
                   patches/gitconfig_nvim.patch
 	$(CP) $< $@
@@ -66,19 +66,19 @@ ifneq ($(WITH_NVIM),)
 	patch $@ patches/gitconfig_nvim.patch
 endif
 	
-build/tmux.conf : src/tmux.conf patches/tmux.conf_1.x.patch
+build/tmux.conf : configs/tmux.conf patches/tmux.conf_1.x.patch
 	$(CP) $< $@
 ifneq ($(WITH_TMUX_1_x),)
 	patch $@ patches/tmux.conf_1.x.patch
 endif
 	
-build/ssh_config : src/ssh_config
+build/ssh_config : configs/ssh_config
 ifneq ($(ON_MAC),)
 	$(CP) $< $@
 endif
 	
 
-build/% : src/%
+build/% : configs/%
 	$(CP) $< $@
 
 .PHONY : clean
