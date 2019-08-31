@@ -4,7 +4,7 @@
 # set -o xtrace
 
 if [[ -z $1 ]]; then
-    echo 'Usage: config-remote <repo-path> <host> [<rsync-remote-shell>]'
+    echo 'Usage: config-remote <repo-path> [<host>] [<rsync-remote-shell>]'
     exit 1
 fi
 
@@ -20,11 +20,10 @@ if [[ ! -x "$REPO_PATH/scripts/$(basename $0)" ]]; then
 fi
 
 if [[ -z "$HOST" ]]; then
-    echo 'Bad host.'
-    exit 1
+    cd "$REPO_PATH"
+    make && make install && make extra-install
+else
+    $RSYNC ${REMOTE_SHELL:+-e} ${REMOTE_SHELL:+"$REMOTE_SHELL"} "$REPO_PATH" "$HOST:~"
+    ${REMOTE_SHELL:-ssh} $HOST 'cd ~/'"$REPO_NAME"' && \
+                                make && make install && make extra-install'
 fi
-
-$RSYNC ${REMOTE_SHELL:+-e} ${REMOTE_SHELL:+"$REMOTE_SHELL"} "$REPO_PATH" "$HOST":~
-
-${REMOTE_SHELL:-ssh} $HOST 'cd ~/'"$REPO_NAME"' && \
-            make && make install && make extra-install'
