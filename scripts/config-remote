@@ -11,7 +11,7 @@ fi
 REPO_PATH="$(realpath $1)"
 REPO_NAME="$(basename $REPO_PATH)"
 HOST="$2"
-SSH="${3:-ssh}"
+REMOTE_SHELL="$3"
 RSYNC="rsync --exclude=.gitignore --exclude=.git --exclude=build -a --delete"
 
 if [[ ! -x "$REPO_PATH/scripts/$(basename $0)" ]]; then
@@ -24,9 +24,7 @@ if [[ -z "$HOST" ]]; then
     exit 1
 fi
 
-$RSYNC -e "$SSH" $REPO_PATH $HOST:~
+$RSYNC ${REMOTE_SHELL:+-e} ${REMOTE_SHELL:+"$REMOTE_SHELL"} "$REPO_PATH" "$HOST":~
 
-$SSH $HOST 'cd ~/'"$REPO_NAME"' && \
-            make && make install && \
-            ./scripts/install-vim-plug && \
-            ./scripts/install-vim-plug-plugins'
+${REMOTE_SHELL:-ssh} $HOST 'cd ~/'"$REPO_NAME"' && \
+            make && make install && make config'
