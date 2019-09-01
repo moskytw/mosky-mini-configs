@@ -2,6 +2,7 @@
 
 brew install coreutils
 brew install findutils
+brew install gnu-sed
 brew install highlight
 brew install tree
 
