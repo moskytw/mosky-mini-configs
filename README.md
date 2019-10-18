@@ -47,7 +47,7 @@ $ make config HOST=mosky.tw
 The _config_ target also supports to configure a remote machine.
 
 ```bash
-$ make config HOST=mosky.node.mydns REMOTE_SHELL='ssh -J mosky.tw'
+$ make config HOST=another.node.mydns REMOTE_SHELL='ssh -J mosky.tw'
 ```
 
 The _config_ target even supports the remote shell of rsync. I wrote another
