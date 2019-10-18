@@ -279,6 +279,9 @@ set formatoptions=
 " configure backspace so it acts as it should act
 set backspace=eol,start,indent
 
+" make no delay after esc
+set ttimeoutlen=0
+
 " ,p: toggle paste mode
 noremap <silent> <Leader>p :set paste!<CR>:set paste?<CR>
 
