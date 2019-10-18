@@ -13,8 +13,8 @@
     cim = commit -m
     sw = show
     sws = show --stat
-    lg = log --oneline --decorate -30
-    lgau = log --oneline --decorate -30 --author
+    lg = log --oneline --decorate -10
+    lgau = log --oneline --decorate -10 --author
 
     br = branch
     bra = branch -a
