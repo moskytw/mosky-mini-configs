@@ -7,18 +7,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "caps_lock",
-            "modifiers": {
-              "mandatory": [
-              ],
-              "optional": [
-                "command",
-                "shift",
-                "option",
-                "control",
-                "fn"
-              ]
-            }
+            "key_code": "caps_lock"
           },
           "to": [
             {
@@ -38,10 +27,6 @@
             "modifiers": {
               "mandatory": [
                 "control"
-              ],
-              "optional": [
-                "command",
-                "option"
               ]
             }
           },
@@ -103,9 +88,6 @@
             "modifiers": {
               "mandatory": [
                 "control"
-              ],
-              "optional": [
-                "shift"
               ]
             }
           },
@@ -167,11 +149,6 @@
             "modifiers": {
               "mandatory": [
                 "control"
-              ],
-              "optional": [
-                "command",
-                "shift",
-                "option"
               ]
             }
           },
@@ -232,12 +209,6 @@
             "key_code": "m",
             "modifiers": {
               "mandatory": [
-                "control"
-              ],
-              "optional": [
-                "command",
-                "shift",
-                "option",
                 "control"
               ]
             }
@@ -300,8 +271,6 @@
             "modifiers": {
               "mandatory": [
                 "control"
-              ],
-              "optional": [
               ]
             }
           },
@@ -368,13 +337,6 @@
             "modifiers": {
               "mandatory": [
                 "control"
-              ],
-              "optional": [
-                "command",
-                "shift",
-                "option",
-                "control",
-                "fn"
               ]
             }
           },
@@ -436,13 +398,6 @@
             "modifiers": {
               "mandatory": [
                 "control"
-              ],
-              "optional": [
-                "command",
-                "shift",
-                "option",
-                "control",
-                "fn"
               ]
             }
           },
@@ -504,9 +459,6 @@
             "modifiers": {
               "mandatory": [
                 "control"
-              ],
-              "optional": [
-                "shift"
               ]
             }
           },
@@ -571,9 +523,6 @@
             "modifiers": {
               "mandatory": [
                 "control"
-              ],
-              "optional": [
-                "shift"
               ]
             }
           },
@@ -638,13 +587,6 @@
             "modifiers": {
               "mandatory": [
                 "control"
-              ],
-              "optional": [
-                "command",
-                "shift",
-                "option",
-                "control",
-                "fn"
               ]
             }
           },
@@ -706,13 +648,6 @@
             "modifiers": {
               "mandatory": [
                 "control"
-              ],
-              "optional": [
-                "command",
-                "shift",
-                "option",
-                "control",
-                "fn"
               ]
             }
           },
@@ -774,10 +709,6 @@
             "modifiers": {
               "mandatory": [
                 "control"
-              ],
-              "optional": [
-                "command",
-                "option"
               ]
             }
           },
@@ -839,8 +770,6 @@
             "modifiers": {
               "mandatory": [
                 "control"
-              ],
-              "optional": [
               ]
             }
           },
@@ -905,8 +834,6 @@
             "modifiers": {
               "mandatory": [
                 "control"
-              ],
-              "optional": [
               ]
             }
           },
@@ -975,8 +902,6 @@
             "modifiers": {
               "mandatory": [
                 "control"
-              ],
-              "optional": [
               ]
             }
           },
@@ -1050,9 +975,6 @@
             "modifiers": {
               "mandatory": [
                 "option"
-              ],
-              "optional": [
-                "shift"
               ]
             }
           },
@@ -1117,9 +1039,6 @@
             "modifiers": {
               "mandatory": [
                 "option"
-              ],
-              "optional": [
-                "shift"
               ]
             }
           },
@@ -1184,8 +1103,6 @@
             "modifiers": {
               "mandatory": [
                 "option"
-              ],
-              "optional": [
               ]
             }
           },
