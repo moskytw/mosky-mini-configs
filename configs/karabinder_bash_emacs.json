@@ -29,6 +29,22 @@
       ]
     },
     {
+      "description": "Map left_control to right_control",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "left_control"
+          },
+          "to": [
+            {
+              "key_code": "right_control"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "description": "Bash control characters (right_control-keys)",
       "manipulators": [
         {
