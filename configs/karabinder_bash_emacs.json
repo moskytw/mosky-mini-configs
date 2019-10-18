@@ -842,10 +842,14 @@
           },
           "to": [
             {
-              "key_code": "delete_or_backspace",
+              "key_code": "left_arrow",
               "modifiers": [
-                "command"
+                "left_command",
+                "left_shift"
               ]
+            },
+            {
+              "key_code": "delete_or_backspace"
             }
           ],
           "conditions": [
@@ -906,11 +910,14 @@
           },
           "to": [
             {
-              "key_code": "delete_or_backspace",
+              "key_code": "right_arrow",
               "modifiers": [
-                "command",
-                "fn"
+                "left_command",
+                "left_shift"
               ]
+            },
+            {
+              "key_code": "delete_or_backspace"
             }
           ],
           "conditions": [
