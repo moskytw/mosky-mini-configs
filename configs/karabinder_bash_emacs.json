@@ -27,6 +27,9 @@
             "modifiers": {
               "mandatory": [
                 "control"
+              ],
+              "optional": [
+                "option"
               ]
             }
           },
