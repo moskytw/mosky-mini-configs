@@ -84,22 +84,27 @@ Plug 'terryma/vim-expand-region'
 Plug 'tpope/vim-surround'
 
 " ms-: multiple selection
-" enter and exit the ms-visual mode:
+" in the normal mode:
 "
-" <Ctrl-N>: enter with current word or visual selection
-" <ESC>   : exit
+" <Ctrl-N>: enter with the current word or selection into the ms-visual mode
 "
 " in the ms-visual mode:
 "
 " <Ctrl-N>: add
 " <Ctrl-X>: skip
 " <Ctrl-P>: back
-" c, s    : delete all selections and go ms-insert mode
-" v       : go normal mode
+" c, s, I, A: action and go the ms-insert mode
+" x: delete and go the ms-normal mode
+" <ESC>: go the ms-normal mode
+"
+" in the ms-insert mode:
+"
+" <ESC>: go the ms-normal mode
 "
 " in the ms-normal mode:
 "
-" I, i, a, A: move the cursors and go ms-insert mode
+" i: back to the ms-insert mode
+" <ESC>: back to the normal mode
 "
 Plug 'terryma/vim-multiple-cursors'
 
