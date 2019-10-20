@@ -48,6 +48,7 @@ fi
 
 # both macOS and Linux
 
+PATH="$HOME/.poetry/bin:$PATH"
 PATH="$HOME/.bin:$PATH"
 PYTHONPATH="$HOME/.pythonpath${PYTHONPATH:+:}$PYTHONPATH"
 PYTHONIOENCODING='utf-8'
