@@ -15,3 +15,5 @@ brew install nmap
 
 brew install python@2
 brew install python
+
+brew install pyenv

@@ -48,6 +48,7 @@ fi
 
 # both macOS and Linux
 
+command -v pyenv &> /dev/null && eval "$(pyenv init -)"
 PATH="$HOME/.poetry/bin:$PATH"
 PATH="$HOME/.bin:$PATH"
 PYTHONPATH="$HOME/.pythonpath${PYTHONPATH:+:}$PYTHONPATH"
