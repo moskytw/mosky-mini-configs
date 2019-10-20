@@ -597,7 +597,8 @@
                 "control"
               ],
               "optional": [
-                "command"
+                "command",
+                "fn"
               ]
             }
           },
@@ -661,7 +662,8 @@
                 "control"
               ],
               "optional": [
-                "command"
+                "command",
+                "fn"
               ]
             }
           },
