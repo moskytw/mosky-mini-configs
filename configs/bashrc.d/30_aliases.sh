@@ -82,10 +82,11 @@ alias hljs='hl -S js'
 alias hlcss='hl -S css'
 alias hljson='hl -S json'
 
-alias hlpyvi="vi +':set ft=python' -"
-alias hlhtmlvi="vi +':set ft=html' -"
-alias hljsvi="vi +':set ft=javascript' -"
-alias hlcssvi="vi +':set ft=css' -"
+alias vipy="vi +':set ft=python' -"
+alias vihtml="vi +':set ft=html' -"
+alias vijs="vi +':set ft=javascript' -"
+alias vicss="vi +':set ft=css' -"
+alias vijson="vi +':set ft=json' -"
 
 # Python rocks!
 
