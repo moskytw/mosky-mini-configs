@@ -595,6 +595,9 @@
             "modifiers": {
               "mandatory": [
                 "control"
+              ],
+              "optional": [
+                "command"
               ]
             }
           },
@@ -656,6 +659,9 @@
             "modifiers": {
               "mandatory": [
                 "control"
+              ],
+              "optional": [
+                "command"
               ]
             }
           },
