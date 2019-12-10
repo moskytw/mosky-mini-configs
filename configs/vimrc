@@ -309,7 +309,7 @@ noremap <silent> <Leader>s :set spell!<CR>:set spell?<CR>
 
 autocmd FileType python
 \ noremap <Leader>i1 i#!/usr/bin/env python<CR><CR>|
-\ noremap <Leader>i2 i#!/usr/bin/env python<CR># -*- coding: utf-8 -*-<CR><CR><CR>from __future__ import division<CR>from __future__ import unicode_literals<CR>from __future__ import print_function<CR><CR>|
+\ noremap <Leader>i2 i#!/usr/bin/env python<CR># -*- coding: utf-8 -*-<CR><CR><CR>from __future__ import division<CR>from __future__ import unicode_literals<CR>from __future__ import print_function<CR><CR><CR>|
 \ noremap <Leader>ii iif __name__ == '__main__':<CR>
 
 autocmd FileType html
