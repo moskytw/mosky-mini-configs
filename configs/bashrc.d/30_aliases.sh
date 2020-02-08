@@ -109,14 +109,13 @@ alias ipy3='ipython3'
 alias pip3='pip3'
 alias mypy3='\mypy'  # use original mypy
 
-# TODO: can we default to py3?
-alias py='py2'
-alias ipy='ipy2'
-alias pym='pym2'
-alias pdb='pdb2'
-alias ipdb='ipdb2'
-alias pip='pip2'
-alias mypy='mypy2'
+alias py='python'
+alias ipy='ipython'
+alias pym='python -m'
+alias pdb='python -m pdb'
+alias ipdb='python -m ipdb'
+alias pip='pip'
+alias mypy='\mypy'  # use original mypy
 
 alias ppy='pipenv run python'
 alias pipy='pipenv run ipython'
