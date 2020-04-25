@@ -117,11 +117,11 @@ alias ipdb='python -m ipdb'
 alias pip='pip'
 alias mypy='\mypy'  # use original mypy
 
-alias ppy='pipenv run python'
-alias pipy='pipenv run ipython'
-alias ppym='pipenv run python -m'
-alias ppdb='pipenv run python -m pdb'
-alias pipdb='pipenv run python -m ipdb'
+alias pyp='pipenv run python'
+alias ipyp='pipenv run ipython'
+alias pymp='pipenv run python -m'
+alias pdbp='pipenv run python -m pdb'
+alias ipdbp='pipenv run python -m ipdb'
 
 # Vim rocks!
 
