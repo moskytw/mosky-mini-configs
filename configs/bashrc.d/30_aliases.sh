@@ -24,6 +24,7 @@ alias grep='grep --color=auto'
 alias g='grep'
 alias gf='g -F'
 alias ge='g -E'
+alias g80='ge -v ".{81,}"'
 # -s: silent
 # -n: line number
 # -H: filename
