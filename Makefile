@@ -47,7 +47,6 @@ build/bash_profile: configs/bash_profile
 ifneq ($(ON_MAC),)
 	$(CP) $< $@
 endif
-	
 
 build/vimrc: configs/vimrc patches/vimrc_nvim.patch
 	$(CP) $< $@
@@ -65,18 +64,17 @@ endif
 ifneq ($(WITH_NVIM),)
 	patch $@ patches/gitconfig_nvim.patch
 endif
-	
+
 build/tmux.conf: configs/tmux.conf patches/tmux.conf_1.x.patch
 	$(CP) $< $@
 ifneq ($(WITH_TMUX_1_x),)
 	patch $@ patches/tmux.conf_1.x.patch
 endif
-	
+
 build/ssh_config: configs/ssh_config
 ifneq ($(ON_MAC),)
 	$(CP) $< $@
 endif
-	
 
 build/%: configs/%
 	$(CP) $< $@
@@ -114,7 +112,7 @@ ifneq ($(ON_MAC),)
 	$(MKDIR) ~/.config/karabiner/assets/complex_modifications/
 	$(CPB) build/karabinder_bash_emacs.json ~/.config/karabiner/assets/complex_modifications/bash_emacs.json
 endif
-	
+
 .PHONY: uninstall
 uninstall:
 	
