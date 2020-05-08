@@ -13,6 +13,7 @@ alias cds="cut -d' '"
 alias cdc="cut -d:"
 alias cdp="cut -d/"
 alias s='sed'
+alias si='sed -i'
 alias sn='sed -n'
 alias a='awk'
 # if ends with a space, then the next word is also checked for alias expansion
