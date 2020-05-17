@@ -218,7 +218,11 @@
             "modifiers": {
               "mandatory": [
                 "control"
+              ],
+              "optional": [
+                "shift"
               ]
+
             }
           },
           "to": [
