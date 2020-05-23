@@ -26,5 +26,5 @@ if [[ -z "$HOST" ]]; then
 else
     $RSYNC ${REMOTE_SHELL:+-e} ${REMOTE_SHELL:+"$REMOTE_SHELL"} "$REPO_PATH" "$HOST:~"
     ${REMOTE_SHELL:-ssh} $HOST 'cd ~/'"$REPO_NAME"' && \
-                                make && make install && make extra-install'
+                                make clean && make && make install && make extra-install'
 fi
