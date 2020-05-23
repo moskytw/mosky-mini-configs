@@ -2,9 +2,10 @@
 
 if [[ -f "$HOME/.ssh/id_rsa" ]]; then
 
-    # try to use `-K` (macOS's keychain) to add the key
+    # if no added key
     if ! ssh-add -l &> /dev/null; then
-        # takes ~0.25 seconds
+        # try to use macOS's keychain to add
+        # will take ~0.25 seconds
         ssh-add -K "$HOME/.ssh/id_rsa" &> /dev/null
     fi
 
