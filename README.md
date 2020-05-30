@@ -32,10 +32,10 @@ equivalent to:
 ```bash
 $ make
 $ make install
-$ make extra-install
+$ make install-extra
 ```
 
-The _extra-install_ target executes
+The _install-extra_ target executes
 [scripts/install-\*](https://github.com/moskytw/mosky-mini-configs/tree/master/scripts)
 to install the extra packages. On Linux, it only executes
 [scripts/install-vim-plug\*](https://github.com/moskytw/mosky-mini-configs/tree/master/scripts).
@@ -55,7 +55,7 @@ private script to configure bunch of servers. Awesome. 😎
 
 The Makefile also has an _uninstall_ target. The target removes, not restores,
 the configs installed by _install_ and won't uninstall the packages installed
-by _extra-install_.
+by _install-extra_.
 
 ## The Vimrc
 

@@ -22,9 +22,9 @@ fi
 
 if [[ -z "$HOST" ]]; then
     cd "$REPO_PATH"
-    make && make install && make extra-install
+    make && make install && make install-extra
 else
     $RSYNC ${REMOTE_SHELL:+-e} ${REMOTE_SHELL:+"$REMOTE_SHELL"} "$REPO_PATH" "$HOST:~"
     ${REMOTE_SHELL:-ssh} $HOST 'cd ~/'"$REPO_NAME"' && \
-                                make clean && make && make install && make extra-install'
+                                make clean && make && make install && make install-extra'
 fi
