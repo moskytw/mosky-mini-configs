@@ -31,7 +31,7 @@ all: build/ \
       build/gitconfig \
       build/tmux.conf \
       build/ssh_config \
-      build/karabinder_bash_emacs.json
+      build/karabiner_bash_emacs.json
 
 # $@: the target, i.e., 'build/'
 build/:
@@ -110,7 +110,7 @@ endif
 	
 ifneq ($(ON_MAC),)
 	$(MKDIR) ~/.config/karabiner/assets/complex_modifications/
-	$(CPB) build/karabinder_bash_emacs.json ~/.config/karabiner/assets/complex_modifications/bash_emacs.json
+	$(CPB) build/karabiner_bash_emacs.json ~/.config/karabiner/assets/complex_modifications/bash_emacs.json
 endif
 
 .PHONY: uninstall

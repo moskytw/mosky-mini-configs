@@ -13,7 +13,7 @@ It includes:
    for unadorned requirements of Python development.
 3. My [Bash, Git, SSH, and tmux](https://github.com/moskytw/mosky-mini-configs/tree/master/configs)
    configs.
-4. My [Karabinder config](https://github.com/moskytw/mosky-mini-configs#the-karabinder-config)
+4. My [Karabiner config](https://github.com/moskytw/mosky-mini-configs#the-karabiner-config)
    which ports the Bash keystrokes to the whole macOS.
 
 ## The Makefile
@@ -62,12 +62,12 @@ by _install-extra_.
 The [vimrc](https://github.com/moskytw/mosky-mini-configs/tree/master/configs/vimrc)
 has super detailed comments. 📚
 
-## The Karabinder Config
+## The Karabiner Config
 
 The emacs-style keystrokes – more precisely, some of them are control chars –
 in Bash keep your hand in the center of keyboard. It feels so good to minimize
 the moving of fingers. The macOS supports partially.  This config ports them
-all via [Karabinder](https://pqrs.org/osx/karabiner/)!
+all via [Karabiner](https://pqrs.org/osx/karabiner/)!
 
 Believe me, you will fall in love with it. 😁
 
@@ -95,11 +95,11 @@ Believe me, you will fall in love with it. 😁
 After install, enable it in Preferences > Complex Modifications > Add rule.
 
 You also can install
-[configs/karabinder_bash_emacs.json](https://github.com/moskytw/mosky-mini-configs/blob/master/configs/karabinder_bash_emacs.json)
+[configs/karabiner_bash_emacs.json](https://github.com/moskytw/mosky-mini-configs/blob/master/configs/karabiner_bash_emacs.json)
 alone by:
 
 ```bash
-$ cp configs/karabinder_bash_emacs.json ~/.config/karabiner/assets/complex_modifications/bash_emacs.json
+$ cp configs/karabiner_bash_emacs.json ~/.config/karabiner/assets/complex_modifications/bash_emacs.json
 ```
 
 Hope my configs help! ❤️
