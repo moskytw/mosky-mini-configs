@@ -7,6 +7,7 @@ SHELL = /bin/bash
 USER_IS_MOSKY = $(shell whoami | grep '^mosky$$' -o)
 WITH_NVIM = $(shell command -v nvim)
 WITH_TMUX_1_x = $(shell tmux -V | grep 'tmux 1.' -o)
+WITH_TMUX_2_old = $(shell tmux -V | grep 'tmux 2.[1-8]' -o)
 ON_MAC = $(shell uname | grep 'Darwin' -o)
 
 MKDIR = mkdir -p
@@ -68,7 +69,11 @@ endif
 build/tmux.conf: configs/tmux.conf patches/tmux.conf_1.x.patch
 	$(CP) $< $@
 ifneq ($(WITH_TMUX_1_x),)
+	patch $@ patches/tmux.conf_2_old.patch
 	patch $@ patches/tmux.conf_1.x.patch
+endif
+ifneq ($(WITH_TMUX_2_old),)
+	patch $@ patches/tmux.conf_2_old.patch
 endif
 
 build/ssh_config: configs/ssh_config
