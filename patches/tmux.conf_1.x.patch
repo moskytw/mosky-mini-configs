@@ -1,8 +1,8 @@
 32,33c32,35
 < # works in tmux 2.2
-< setw -g mouse on
+< set-window-option -g mouse on
 ---
 > # works in tmux 1.8, 1.9a
-> setw -g mouse-resize-pane on
-> setw -g mouse-select-pane on
-> setw -g mouse-select-window on
+> set-window-option -g mouse-resize-pane on
+> set-window-option -g mouse-select-pane on
+> set-window-option -g mouse-select-window on
