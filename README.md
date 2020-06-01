@@ -19,8 +19,8 @@ It includes:
 ## The Makefile
 
 The Makefile integrated all of the functionalities including copying and
-patching out the correct version of the configs, like Vim or Neovim, tmux 1.x
-or 2.x, installing them into system, and installing extra packages, etc.
+patching out the correct version of the configs, like Vim or Neovim, tmux 1.x,
+2.x, or 3.x, installing them into system, and installing extra packages, etc.
 
 ```bash
 $ make config
