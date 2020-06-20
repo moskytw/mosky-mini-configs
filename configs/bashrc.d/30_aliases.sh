@@ -86,6 +86,7 @@ alias hlhtml='hl -S html'
 alias hljs='hl -S js'
 alias hlcss='hl -S css'
 alias hljson='hl -S json'
+alias hldiff='hl -S diff'
 
 alias vipy="vi +':set ft=python' -"
 alias vihtml="vi +':set ft=html' -"
