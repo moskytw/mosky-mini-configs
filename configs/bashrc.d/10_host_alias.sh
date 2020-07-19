@@ -14,4 +14,3 @@ fi
 if [[ -f "$HOME/.host_alias_color_green" ]]; then
     HOST_ALIAS_COLOR='\e[0;32m'  # fg green
 fi
-
