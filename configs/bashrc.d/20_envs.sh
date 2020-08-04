@@ -48,7 +48,7 @@ fi
 
 # both macOS and Linux
 
-# TODO: it's slow; can we make it lazy?
+# TODO: It's slow. Can we make it lazy?
 command -v pyenv &> /dev/null && eval "$(pyenv init -)"
 PATH="$HOME/.poetry/bin:$PATH"
 PATH="$HOME/.bin:$PATH"
