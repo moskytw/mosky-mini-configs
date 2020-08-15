@@ -30,6 +30,7 @@ The _config_ is an all-in-one target to configure the local machine, which is
 equivalent to:
 
 ```bash
+$ make clean
 $ make
 $ make install
 $ make install-extra
