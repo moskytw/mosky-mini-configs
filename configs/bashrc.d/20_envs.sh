@@ -85,3 +85,7 @@ export CLASSPATH
 
 export LC_ALL
 export LANG
+
+# https://apple.stackexchange.com/a/371998
+
+export BASH_SILENCE_DEPRECATION_WARNING=1
