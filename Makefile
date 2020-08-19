@@ -6,8 +6,8 @@ SHELL = /bin/bash
 # NOTE: use empty string as false, so `ifneq ($VAR,)` === if bool(VAR)
 USER_IS_MOSKY = $(shell whoami | grep '^mosky$$' -o)
 WITH_NVIM = $(shell command -v nvim)
-WITH_TMUX_1_x = $(shell tmux -V | grep 'tmux 1.' -o)
-WITH_TMUX_2_old = $(shell tmux -V | grep 'tmux 2.[1-8]' -o)
+WITH_TMUX_1_x = $(shell tmux -V 2> /dev/null | grep 'tmux 1.' -o)
+WITH_TMUX_2_old = $(shell tmux -V 2> /dev/null | grep 'tmux 2.[1-8]' -o)
 ON_MAC = $(shell uname | grep 'Darwin' -o)
 
 MKDIR = mkdir -p
