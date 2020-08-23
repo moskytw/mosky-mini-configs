@@ -54,9 +54,10 @@ $ make config HOST=another.node.mydns REMOTE_SHELL='ssh -J mosky.tw'
 The _config_ target even supports the remote shell of rsync. I wrote another
 private script to configure bunch of servers. Awesome. 😎
 
-The Makefile also has an _uninstall_ target. The target removes, not restores,
-the configs installed by _install_ and won't uninstall the packages installed
-by _install-extra_.
+The Makefile also has an _uninstall_ target. The target removes, **not
+restores**, the configs installed by _install_.
+
+Note it won't uninstall the packages installed by _install-extra_.
 
 ## The Vimrc
 
