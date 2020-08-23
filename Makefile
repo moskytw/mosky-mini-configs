@@ -4,6 +4,7 @@ SHELL = /bin/bash
 # ALL_RESET = \x1b[0m
 
 # NOTE: use empty string as false, so `ifneq ($VAR,)` === if bool(VAR)
+# the `$$` will become `$`
 USER_IS_MOSKY = $(shell whoami | grep '^mosky$$' -o)
 WITH_NVIM = $(shell command -v nvim)
 WITH_TMUX_1_x = $(shell tmux -V 2> /dev/null | grep 'tmux 1.' -o)
@@ -160,5 +161,14 @@ config:
 
 .PHONY: debug
 debug:
-	@echo $(CPB)
-	@echo $(ON_MAC)
+	@echo USER_IS_MOSKY: $(USER_IS_MOSKY)
+	@echo WITH_NVIM: $(WITH_NVIM)
+	@echo WITH_TMUX_1_x: $(WITH_TMUX_1_x)
+	@echo WITH_TMUX_2_old: $(WITH_TMUX_2_old)
+	@echo ON_MAC: $(ON_MAC)
+	@echo MKDIR: $(MKDIR)
+	@echo CP: $(CP)
+	@echo CPB: $(CPB)
+	@echo RM: $(RM)
+	@echo RMI: $(RMI)
+	@echo OR_TRUE: $(OR_TRUE)
