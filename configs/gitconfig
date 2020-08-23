@@ -26,10 +26,15 @@
     unstage = reset HEAD
     uncommit = reset --soft HEAD^
 
+[merge]
+
+    tool = vimdiff
+
+[pull]
+
+    rebase = false
+
 [rebase]
 
     autosquash = true
 
-[merge]
-
-    tool = vimdiff
