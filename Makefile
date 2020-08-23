@@ -85,7 +85,7 @@ build/%: configs/%
 
 .PHONY: clean
 clean:
-	$(RM) -f build/
+	$(RM) build/
 
 .PHONY: install
 install:
