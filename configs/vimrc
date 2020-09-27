@@ -201,8 +201,9 @@ set lazyredraw
 
 " buffer
 noremap <Leader>e :edit <C-R>=expand('%:p:h')<CR>/
-noremap <Leader>b :buffers<CR>:b
-noremap <Leader>d :bd<CR>
+" XXX: not useful
+" noremap <Leader>b :buffers<CR>:b
+" noremap <Leader>d :bd<CR>
 
 " tab
 set tabpagemax=100
