@@ -21,23 +21,24 @@ Plug 'kchmck/vim-coffee-script'
 " use % to travel Python's if, elif, etc.
 Plug 'vim-scripts/python_match.vim'
 
-" after :map <Leader><Leader> <Plug>(easymotion-prefix)
+" After `:map <Leader><Leader> <Plug>(easymotion-prefix)`:
 "
-" <Leader><Leader>w: select a beginning of word to jump
-" <Leader><Leader>W: select a beginning of WORD to jump
-" <Leader><Leader>f: select a right char to jump
-" <Leader><Leader>F: select a left char to jump
-" <Leader><Leader>s: select a right and left char to jump
+" * `<Leader><Leader>w`: select a beginning of word to jump.
+" * `<Leader><Leader>W`: select a beginning of WORD to jump.
+" * `<Leader><Leader>f`: select a right char to jump.
+" * `<Leader><Leader>F`: select a left char to jump.
+" * `<Leader><Leader>s`: select a right and left char to jump.
 "
-" <Leader><Leader>j: select a line downward to jump
-" <Leader><Leader>k: select a line forward to jump
-" <Leader><Leader>n: select a latest / or ? to jump
-" <Leader><Leader>N: select a latest / or ? to jump
+" * `<Leader><Leader>j`: select a line downward to jump.
+" * `<Leader><Leader>k`: select a line forward to jump.
+" * `<Leader><Leader>n`: select a latest / or ? to jump.
+" * `<Leader><Leader>N`: select a latest / or ? to jump.
 "
-" more:
+" See also:
 "
-" :tabnew | h easymotion | only
-" https://github.com/easymotion/vim-easymotion/blob/master/doc/easymotion.txt
+" * `:tabnew | h easymotion | only`
+" * https://github.com/easymotion/vim-easymotion/blob/master/doc/easymotion.txt
+"
 Plug 'easymotion/vim-easymotion'
 
 " --- selecting ---
@@ -46,7 +47,6 @@ Plug 'easymotion/vim-easymotion'
 " dia: f(a, b, c) -> f(a,, c)
 " daa: f(a, b, c) -> f(a, c)
 " dAa: f(a, b, c) -> f(ac)
-"
 " more: https://github.com/wellle/targets.vim/blob/master/cheatsheet.md
 Plug 'wellle/targets.vim'
 
@@ -83,28 +83,30 @@ Plug 'terryma/vim-expand-region'
 " yss for entire line
 Plug 'tpope/vim-surround'
 
-" ms-: multiple selection
-" in the normal mode:
+" * ms-: multiple selection.
 "
-" <Ctrl-N>: enter with the current word or selection into the ms-visual mode
+" In the normal mode:
 "
-" in the ms-visual mode:
+" * `<Ctrl-N>`: enter with the current word or selection into the ms-visual
+"               mode.
 "
-" <Ctrl-N>: add
-" <Ctrl-X>: skip
-" <Ctrl-P>: back
-" c, s, I, A: action and go the ms-insert mode
-" x: delete and go the ms-normal mode
-" <ESC>: go the ms-normal mode
+" In the ms-visual mode:
 "
-" in the ms-insert mode:
+" * `<Ctrl-N>`: add.
+" * `<Ctrl-X>`: skip.
+" * `<Ctrl-P>`: back.
+" * `c`, `s`, `I`, `A`: action and go the ms-insert mode.
+" * `x`: delete and go the ms-normal mode.
+" * `<ESC>`: go the ms-normal mode.
 "
-" <ESC>: go the ms-normal mode
+" In the ms-insert mode:
 "
-" in the ms-normal mode:
+" * `<ESC>`: go the ms-normal mode.
 "
-" i: back to the ms-insert mode
-" <ESC>: back to the normal mode
+" In the ms-normal mode:
+"
+" * `i`: back to the ms-insert mode.
+" * `<ESC>`: back to the normal mode.
 "
 Plug 'terryma/vim-multiple-cursors'
 
@@ -151,27 +153,27 @@ set scrolloff=2
 set wildmenu
 set wildignore=*.o,*~,*.pyc
 
-" ,f: toggle foldenable
+" * `,f`: toggle foldenable.
 "
-" act with cursor
+" Act with cursor:
 "
-" zj: move to next fold
-" zk: move to prev fold
-" zo: open one fold
-" zO: open folds recursively
-" zc: close one fold
-" zC: (select multiple lines) close folds recursively
-" za: toggle one fold
-" zA: toggle folds recursively
+" * `zj`: move to next fold.
+" * `zk`: move to prev fold.
+" * `zo`: open one fold.
+" * `zO`: open folds recursively.
+" * `zc`: close one fold.
+" * `zC`: (select multiple lines) close folds recursively.
+" * `za`: toggle one fold.
+" * `zA`: toggle folds recursively.
 "
-" act on a buffer
+" Act on a buffer:
 "
-" zx: undo manually opened and closed folds, except the cursor line
-" zX: undo manually opened and closed folds
-" zr: open one fold level: foldlevel+=1
-" zR: open all fold level: foldlevel=MAX
-" zm: close one fold level: foldlevel-=1
-" zM: close all fold level: foldlevel=0
+" * `zx`: undo manually opened and closed folds, except the cursor line.
+" * `zX`: undo manually opened and closed folds.
+" * `zr`: open one fold level: foldlevel+=1.
+" * `zR`: open all fold level: foldlevel=MAX.
+" * `zm`: close one fold level: foldlevel-=1.
+" * `zM`: close all fold level: foldlevel=0.
 "
 set foldmethod=indent
 set foldnestmax=3
@@ -206,14 +208,14 @@ noremap <Leader>e :edit <C-R>=expand('%:p:h')<CR>/
 " noremap <Leader>d :bd<CR>
 
 " tab
+" gt: next tab
+" gT: previous tab
 set tabpagemax=100
 noremap <Leader>t :tabedit <C-R>=expand('%:p:h')<CR>/
 " ,1 ,2 ,3: go specific tab
 for i in range(1, 9)
     exec 'noremap <Leader>'.i.' '.i.'gt'
 endfor
-" gt: next tab
-" gT: previous tab
 
 " split
 " ,v: split vertically
@@ -236,7 +238,6 @@ autocmd BufReadPost *
 " 'a: jump to mark 'a'
 " '<: go the beginning of the last selection
 " '>: go the end of the last selection
-"
 " m<jjjm>gv: mark and select
 
 " move smoothly between lines
