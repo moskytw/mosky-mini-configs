@@ -252,7 +252,7 @@ noremap <silent> <Leader>c :let @/ = ''<CR>
 
 set mouse=a
 
-" refine the arrow-keys
+" refine the arrow keys
 noremap <down> g<down>
 noremap <up> g<up>
 noremap j gj
