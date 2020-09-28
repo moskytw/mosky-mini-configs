@@ -203,9 +203,6 @@ set lazyredraw
 
 " buffer
 noremap <Leader>e :edit <C-R>=expand('%:p:h')<CR>/
-" XXX: not useful
-" noremap <Leader>b :buffers<CR>:b
-" noremap <Leader>d :bd<CR>
 
 " tab
 " gt: next tab
@@ -292,10 +289,6 @@ set ttimeoutlen=0
 
 " ,p: toggle paste mode
 noremap <silent> <Leader>p :set paste!<CR>:set paste?<CR>
-
-" XXX: not useful
-" " ,r: toggle registers
-" noremap <silent> <Leader>r :registers<CR>:put 
 
 " ,s: toggle spelling check
 " zg: mark word as good
