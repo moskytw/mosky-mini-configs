@@ -32,6 +32,9 @@ if [[ "$(uname)" == "Darwin" ]]; then
     # consider `$ man sed` without `$ brew install gnu-sed`
     MANPATH="$(manpath):$MANPATH"
 
+    # $ brew install grep
+    PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
+
     # $ brew info coreutils
     PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
     MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
