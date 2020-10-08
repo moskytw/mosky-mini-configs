@@ -129,7 +129,9 @@ alias ipdbp='pipenv run python -m ipdb'
 
 # Vim rocks!
 
-if [[ -x $(command -v nvim) ]]; then
+# won't use nvim anymore
+# if [[ -x $(command -v nvim) ]]; then
+if false; then
     alias vi='nvim -p'
     alias vim='nvim -p'
     alias view='nvim -R'
