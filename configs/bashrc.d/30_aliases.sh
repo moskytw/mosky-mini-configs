@@ -8,7 +8,7 @@ alias hi='history'
 
 alias h='head'
 alias t='tail'
-alias c='cut'
+alias c='cut'  # = cut -dTAB
 alias cds="cut -d' '"
 alias cdc="cut -d:"
 alias cdp="cut -d/"
