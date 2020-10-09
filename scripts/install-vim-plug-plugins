@@ -1,9 +1,3 @@
 #!/bin/bash
 
-# won't use nvim anymore
-# if [[ -x $(command -v nvim) ]]; then
-if false; then
-    nvim -es +PlugInstall +qa > /dev/null
-else
-    vim +PlugInstall +qa > /dev/null
-fi
+vim +PlugInstall +qa > /dev/null

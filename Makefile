@@ -6,8 +6,6 @@ SHELL = /bin/bash
 # use empty string as false, so `ifneq ($VAR,)` === if bool(VAR)
 # the `$$` will become `$`
 USER_IS_MOSKY = $(shell whoami | grep '^mosky$$' -o)
-WITH_NVIM = $(shell command -v nvim)
-WITH_NVIM =  # won't use nvim anymore
 WITH_TMUX_1_x = $(shell tmux -V 2> /dev/null | grep 'tmux 1.' -o)
 WITH_TMUX_2_old = $(shell tmux -V 2> /dev/null | grep 'tmux 2.[1-8]' -o)
 ON_MAC = $(shell uname | grep 'Darwin' -o)
@@ -49,21 +47,14 @@ ifneq ($(ON_MAC),)
 	$(CP) $< $@
 endif
 
-build/vimrc: configs/vimrc patches/vimrc_nvim.patch
+build/vimrc: configs/vimrc
 	$(CP) $< $@
-ifneq ($(WITH_NVIM),)
-	patch $@ patches/vimrc_nvim.patch
-endif
 
 build/gitconfig: configs/gitconfig \
-                  patches/gitconfig_mosky.patch \
-                  patches/gitconfig_nvim.patch
+                  patches/gitconfig_mosky.patch
 	$(CP) $< $@
 ifneq ($(USER_IS_MOSKY),)
 	patch $@ patches/gitconfig_mosky.patch
-endif
-ifneq ($(WITH_NVIM),)
-	patch $@ patches/gitconfig_nvim.patch
 endif
 
 build/tmux.conf: configs/tmux.conf patches/tmux.conf_1.x.patch
@@ -99,12 +90,7 @@ ifneq ($(ON_MAC),)
 	$(CPB) build/bash_profile ~/.bash_profile
 endif
 	
-ifneq ($(WITH_NVIM),)
-	$(MKDIR) ~/.config/nvim/
-	$(CPB) build/vimrc ~/.config/nvim/init.vim
-else
 	$(CPB) build/vimrc ~/.vimrc
-endif
 	
 	$(CPB) build/gitconfig ~/.gitconfig
 	$(CPB) build/tmux.conf ~/.tmux.conf
@@ -127,11 +113,7 @@ ifneq ($(ON_MAC),)
 	$(RM) ~/.bash_profile
 endif
 	
-ifneq ($(WITH_NVIM),)
-	$(RM) ~/.config/nvim/init.vim
-else
 	$(RM) ~/.vimrc
-endif
 	
 	$(RM) ~/.gitconfig
 	$(RM) ~/.tmux.conf
@@ -161,7 +143,6 @@ config:
 .PHONY: debug
 debug:
 	@echo USER_IS_MOSKY: $(USER_IS_MOSKY)
-	@echo WITH_NVIM: $(WITH_NVIM)
 	@echo WITH_TMUX_1_x: $(WITH_TMUX_1_x)
 	@echo WITH_TMUX_2_old: $(WITH_TMUX_2_old)
 	@echo ON_MAC: $(ON_MAC)
