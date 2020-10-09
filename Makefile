@@ -3,7 +3,7 @@ SHELL = /bin/bash
 # FG_YELLOW = \x1b[0;33m
 # ALL_RESET = \x1b[0m
 
-# NOTE: use empty string as false, so `ifneq ($VAR,)` === if bool(VAR)
+# use empty string as false, so `ifneq ($VAR,)` === if bool(VAR)
 # the `$$` will become `$`
 USER_IS_MOSKY = $(shell whoami | grep '^mosky$$' -o)
 WITH_NVIM = $(shell command -v nvim)
