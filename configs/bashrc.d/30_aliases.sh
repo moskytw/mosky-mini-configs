@@ -23,8 +23,6 @@ alias xi='xargs -I{} '
 alias grep='grep --color=auto'
 
 alias g='grep'
-alias gf='g -F'
-alias ge='g -E'
 alias g80='g -E "^.{,80}$" --color=never'
 # -s: silent
 # -n: line number
@@ -36,11 +34,6 @@ alias gr="g -R \
           --exclude-dir .mypy_cache \
           --exclude-dir .git \
           -s -n -H"
-
-alias ga='g --color=always'
-alias gfa='gf --color=always'
-alias gea='ge --color=always'
-alias gra='gr --color=always'
 
 # file management
 
