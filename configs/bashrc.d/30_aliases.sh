@@ -52,12 +52,12 @@ alias ll='ls -aFh -l'
 # grep-style find
 fr() {
     find -L \
+         "${@:2}" \
          -not -path '*.pyc' \
          -not -path '*/__pycache__/*' \
          -not -path '*/.ipynb_checkpoints/*' \
          -not -path '*/.mypy_cache/*' \
          -not -path '*/.git/*' \
-         "${@:2}" \
          -path "*$1*"
 }
 
