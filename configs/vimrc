@@ -334,7 +334,7 @@ noremap <Leader>X :xa<CR>
 noremap <Leader>Z :wa<CR><C-Z>
 noremap <Leader>S :w !sudo tee %:p > /dev/null
 " usually we don't wanna go ex mode
-noremap Q :qa
+noremap Q :qa!
 noremap E Q
 " usually we don't want the command line window
 " use c_CTRL-F instead
