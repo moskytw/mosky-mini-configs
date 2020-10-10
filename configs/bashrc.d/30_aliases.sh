@@ -14,7 +14,6 @@ alias cdc="cut -d:"
 alias cdp="cut -d/"
 alias s='sed'
 alias sn='sed -n'
-# TODO: should we use vim -E instead?
 alias si='sed -i'
 alias a='awk'
 # if ends with a space, then the next word is also checked for alias expansion
