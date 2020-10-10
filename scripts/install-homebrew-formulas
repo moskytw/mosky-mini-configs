@@ -14,7 +14,6 @@ brew install vim
 
 brew install nmap
 
-brew install python@2
 brew install python
 
 brew install nodejs  # for jupyter labextension install @jupyter-widgets/jupyterlab-manager
