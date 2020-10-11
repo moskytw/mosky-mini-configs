@@ -4,19 +4,17 @@ brew install coreutils
 brew install findutils
 brew install grep
 brew install gnu-sed
+
+brew install ripgrep
+brew install jq
 brew install highlight
 brew install tree
-brew install jq
-brew install ripgrep
-
-brew install tmux
-brew install git
 brew install vim
+brew install git
+brew install tmux
 
 brew install nmap
 
 brew install python
-
 brew install nodejs  # for jupyter labextension install @jupyter-widgets/jupyterlab-manager
-
 brew install pyenv
