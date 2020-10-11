@@ -12,6 +12,7 @@ brew install tree
 brew install vim
 brew install git
 brew install tmux
+brew install fsevents-tools
 
 brew install nmap
 
