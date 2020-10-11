@@ -7,6 +7,7 @@ brew install gnu-sed
 brew install highlight
 brew install tree
 brew install jq
+brew install ripgrep
 
 brew install tmux
 brew install git
