@@ -65,7 +65,7 @@ alias du='du -h'
 alias du0='du -d 0'
 alias du1='du -d 1'
 
-alias rsync='rsync -v -h'
+alias rsync='rsync -v -h --progress'
 
 # make the behavior consistent between systems
 alias file='file -h'
