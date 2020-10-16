@@ -22,6 +22,7 @@ alias xi='xargs -I{} '
 alias grep='grep --color=auto'
 
 alias g='grep'
+alias gv='grep -v'
 alias g80='g -E "^.{,80}$" --color=never'
 # -s: silent
 # -n: line number
