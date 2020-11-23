@@ -142,6 +142,8 @@ config:
 
 .PHONY: debug
 debug:
+	@echo HOST: $(HOST)
+	@echo REMOTE_SHELL: $(REMOTE_SHELL)
 	@echo USER_IS_MOSKY: $(USER_IS_MOSKY)
 	@echo WITH_TMUX_1_x: $(WITH_TMUX_1_x)
 	@echo WITH_TMUX_2_old: $(WITH_TMUX_2_old)
