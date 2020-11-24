@@ -72,6 +72,8 @@ HISTFILESIZE=50000
 
 # make C-s work
 stty -ixon
+# enable `ls **` for bash >= 4
+shopt -s globstar 2> /dev/null
 
 # remove the trailing colon if any
 PATH="${PATH%:}"
