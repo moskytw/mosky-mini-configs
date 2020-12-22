@@ -246,7 +246,7 @@ set incsearch
 set ignorecase
 " be case-sensitive when contains upper char
 set smartcase
-set nowrapscan
+" set nowrapscan
 
 " ,c: clear search register
 noremap <silent> <Leader>c :let @/ = ''<CR>
