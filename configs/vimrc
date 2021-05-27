@@ -108,7 +108,10 @@ Plug 'tpope/vim-surround'
 " * `i`: back to the ms-insert mode.
 " * `<ESC>`: back to the normal mode.
 "
-Plug 'terryma/vim-multiple-cursors'
+" Plug 'terryma/vim-multiple-cursors'
+
+" See: https://github.com/mg979/vim-visual-multi .
+Plug 'mg979/vim-visual-multi'
 
 " --- Mosky's ---
 
