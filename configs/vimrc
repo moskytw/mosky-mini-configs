@@ -83,33 +83,6 @@ Plug 'terryma/vim-expand-region'
 " yss for entire line
 Plug 'tpope/vim-surround'
 
-" * ms-: multiple selection.
-"
-" In the normal mode:
-"
-" * `<Ctrl-N>`: enter with the current word or selection into the ms-visual
-"               mode.
-"
-" In the ms-visual mode:
-"
-" * `<Ctrl-N>`: add.
-" * `<Ctrl-X>`: skip.
-" * `<Ctrl-P>`: back.
-" * `c`, `s`, `I`, `A`: action and go the ms-insert mode.
-" * `x`: delete and go the ms-normal mode.
-" * `<ESC>`: go the ms-normal mode.
-"
-" In the ms-insert mode:
-"
-" * `<ESC>`: go the ms-normal mode.
-"
-" In the ms-normal mode:
-"
-" * `i`: back to the ms-insert mode.
-" * `<ESC>`: back to the normal mode.
-"
-" Plug 'terryma/vim-multiple-cursors'
-
 " See: https://github.com/mg979/vim-visual-multi .
 Plug 'mg979/vim-visual-multi'
 
