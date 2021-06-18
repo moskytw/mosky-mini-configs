@@ -6,6 +6,10 @@ alias hi='history'
 
 # text stream rocks!
 
+if [[ "$(uname)" == "Darwin" ]]; then
+    alias zcat='gzcat'
+fi
+
 alias h='head'
 alias t='tail'
 alias c='cut'  # = cut -dTAB
