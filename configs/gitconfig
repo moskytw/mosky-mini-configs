@@ -1,31 +1,3 @@
-[alias]
-
-    st = status
-    di = diff
-    diw = diff --word-diff=color
-    dis = diff --stat
-    ad = add
-    adp = add -p
-    dic = diff --cached
-    dicw = diff --cached --word-diff=color
-    dics = diff --cached --stat
-    ci = commit
-    cim = commit -m
-    sw = show
-    sws = show --stat
-    lg = log --oneline --decorate -10
-    lgau = log --oneline --decorate -10 --author
-
-    br = branch
-    bra = branch -a
-    bravv = branch -avv
-    co = checkout
-    cob = checkout -b
-
-    amend = commit --amend
-    unstage = reset HEAD
-    uncommit = reset --soft HEAD^
-
 [core]
 
     editor = vim
