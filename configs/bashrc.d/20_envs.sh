@@ -50,9 +50,17 @@ if [[ "$(uname)" == "Darwin" ]]; then
 fi
 
 # both macOS and Linux
-
-# TODO: It's slow. Can we make it lazy?
-command -v pyenv &> /dev/null && eval "$(pyenv init -)"
+if command -v pyenv &> /dev/null; then
+    if [[ -n "$(pyenv --version 2> /dev/null | grep 'pyenv 1' -o)" ]]; then
+        # TODO: It's slow. Can we make it lazy?
+        eval "$(pyenv init --path)"
+    else
+        # TODO: Is it necessary to export?
+        export PYENV_ROOT="$HOME/.pyenv"
+        PATH="$PYENV_ROOT/bin:$PATH"
+        eval "$(pyenv init --path)"
+    fi
+fi
 PATH="$HOME/.poetry/bin:$PATH"
 PATH="$HOME/.bin:$PATH"
 PYTHONPATH="$HOME/.pythonpath${PYTHONPATH:+:}$PYTHONPATH"
