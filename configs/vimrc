@@ -253,9 +253,7 @@ set tabstop=4
 set expandtab
 set smarttab
 
-" TODO: refine the option
-" for gq
-set formatoptions=
+# set formatoptions=
 
 " configure backspace so it acts as it should act
 set backspace=eol,start,indent
