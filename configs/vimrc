@@ -157,7 +157,6 @@ set foldnestmax=3
 set nofoldenable
 noremap <silent> <Leader>f :set foldenable!<CR>:set foldenable?<CR>
 
-" TODO: let foldcolumn use the char like this
 " stl: status line for current window
 " stlnc: status line for non-current window
 set fillchars=stl:\ ,stlnc:\ ,vert:\ ,fold:\ ,diff:\ 
