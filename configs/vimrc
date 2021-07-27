@@ -200,9 +200,9 @@ noremap <silent> <Leader>h :split<CR>
 " return to last edit position when opening files
 " https://vimhelp.org/usr_05.txt.html#last-position-jump
 autocmd BufReadPost *
-    \ if line("'\"") > 0 && line("'\"") <= line('$')
-    \ |   exe "normal! g`\""
-    \ | endif
+    \ if line("'\"") > 0 && line("'\"") <= line('$') |
+    \   exe "normal! g`\"" |
+    \ endif
 
 " --- moving ---
 
@@ -278,12 +278,15 @@ noremap <silent> <Leader>s :set spell!<CR>:set spell?<CR>
 
 " hand-made snippets
 autocmd FileType python
-    \ noremap <Leader>i1 i#!/usr/bin/env python<CR><CR>
-    \ | noremap <Leader>i2 i#!/usr/bin/env python<CR># -*- coding: utf-8 -*-<CR><CR>from __future__ import division<CR>from __future__ import absolute_import<CR>from __future__ import print_function<CR>from __future__ import unicode_literals<CR>from builtins import *  # noqa<CR><CR><CR>
-    \ | noremap <Leader>ii iif __name__ == '__main__':<CR>
+    \ noremap <Leader>i1 i#!/usr/bin/env python<CR><CR>|
+    \ noremap <Leader>i2 i#!/usr/bin/env python<CR># -*- coding: utf-8 -*-<CR><CR>from __future__ import division<CR>from __future__ import absolute_import<CR>from __future__ import print_function<CR>from __future__ import unicode_literals<CR>from builtins import *  # noqa<CR><CR><CR>|
+    \ noremap <Leader>ii iif __name__ == '__main__':<CR>
 
 autocmd FileType html
     \ noremap <Leader>i1 i<!DOCTYPE html><CR><CR>
+
+
+
 
 " --- saving ---
 
