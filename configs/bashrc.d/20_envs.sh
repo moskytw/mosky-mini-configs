@@ -26,6 +26,9 @@ PS1="\[\e]0;$HOST_ALIAS \w\a\]$PS1"
 
 if [[ "$(uname)" == "Darwin" ]]; then
 
+    # for getting the notification from iTerm
+    test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
     # for Homebrew
     PATH="/usr/local/sbin:$PATH"
 
