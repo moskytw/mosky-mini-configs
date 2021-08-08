@@ -285,9 +285,6 @@ autocmd FileType python
 autocmd FileType html
     \ noremap <Leader>i1 i<!DOCTYPE html><CR><CR>
 
-
-
-
 " --- saving ---
 
 " don't backup
