@@ -56,7 +56,7 @@ fi
 if command -v pyenv &> /dev/null; then
     if [[ -n "$(pyenv --version 2> /dev/null | grep 'pyenv 1' -o)" ]]; then
         # TODO: It's slow. Can we make it lazy?
-        eval "$(pyenv init --path)"
+        eval "$(pyenv init -)"
     else
         # TODO: Is it necessary to export?
         export PYENV_ROOT="$HOME/.pyenv"
