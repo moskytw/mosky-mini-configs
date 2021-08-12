@@ -1,10 +1,3 @@
-" see https://github.com/junegunn/vim-plug#usage for installing the plugins
-call plug#begin('~/.vim/plugged')
-
-" sorted by displaying, moving, selecting, editing, and Mosky's
-
-" --- displaying ---
-
 " use % to travel paired tags
 runtime macros/matchit.vim
 
@@ -16,7 +9,8 @@ Plug 'othree/html5.vim'
 Plug 'moskytw/nginx-contrib-vim'
 Plug 'kchmck/vim-coffee-script'
 
-" --- moving ---
+" my own color scheme
+Plug 'moskytw/luthadel.vim'
 
 " use % to travel Python's if, elif, etc.
 Plug 'vim-scripts/python_match.vim'
@@ -40,8 +34,6 @@ Plug 'vim-scripts/python_match.vim'
 " * https://github.com/easymotion/vim-easymotion/blob/master/doc/easymotion.txt
 "
 Plug 'easymotion/vim-easymotion'
-
-" --- selecting ---
 
 " dIa: f(a, b, c) -> f(a, ,c)
 " dia: f(a, b, c) -> f(a,, c)
@@ -70,8 +62,6 @@ Plug 'michaeljsmith/vim-indent-object'
 "       \ }
 Plug 'terryma/vim-expand-region'
 
-" --- editing ---
-
 " ds"    : "word"      -> word
 " dst    : <a>word</a> -> word
 " cs'"   : 'word'      -> "word"
@@ -86,23 +76,12 @@ Plug 'tpope/vim-surround'
 " See: https://github.com/mg979/vim-visual-multi .
 Plug 'mg979/vim-visual-multi'
 
-" --- Mosky's ---
-
-Plug 'moskytw/luthadel.vim'
-
 call plug#end()
 
-" sorted by global, displaying, opening, moving, editing, and saving
-
-" -- global ---
-
-" enable filetype plugins
 filetype plugin on
 filetype indent on
 
 let mapleader = ','
-
-" --- displaying ---
 
 set ruler
 set number
@@ -114,13 +93,11 @@ set linebreak
 
 set cursorline
 set showmatch
-" default off in vim, but default on in nvim
-set hlsearch
 
 set list
 set listchars=tab:▹\ ,trail:▵
 
-" pum: PopUp Menu which is triggered by Ctrl-N in insert mode
+" pum: PopUp Menu, the menu by <C-N> in insert mode
 set pumheight=16
 
 " keep space from top and bottom
@@ -153,7 +130,6 @@ set wildignore=*.o,*~,*.pyc
 "
 set foldmethod=indent
 set foldnestmax=3
-" set foldopen=
 set nofoldenable
 noremap <silent> <Leader>f :set foldenable!<CR>:set foldenable?<CR>
 
@@ -172,15 +148,8 @@ silent! color luthadel
 " don't redraw while executing macros (good performance config)
 set lazyredraw
 
-" --- opening ---
-
-" nvim: E905: Cannot set this option after startup: encoding=utf-8
-" set encoding=utf-8
-
-" buffer
 noremap <Leader>e :edit <C-R>=expand('%:p:h')<CR>/
 
-" tab
 " gt: next tab
 " gT: previous tab
 set tabpagemax=100
@@ -190,7 +159,6 @@ for i in range(1, 9)
     exec 'noremap <Leader>'.i.' '.i.'gt'
 endfor
 
-" split
 " ,v: split vertically
 " ,h: split horizontally
 set splitright
@@ -203,8 +171,6 @@ autocmd BufReadPost *
     \ if line("'\"") > 0 && line("'\"") <= line('$') |
     \   exe "normal! g`\"" |
     \ endif
-
-" --- moving ---
 
 " '': jump to the last place
 " ma: set mark 'a'
@@ -221,7 +187,6 @@ set incsearch
 set ignorecase
 " be case-sensitive when contains upper char
 set smartcase
-" set nowrapscan
 
 " ,c: clear search register
 noremap <silent> <Leader>c :let @/ = ''<CR>
@@ -237,14 +202,11 @@ noremap k gk
 " fix the offical python indent
 let pyindent_open_paren=0
 
-" EasyMotion
 map <Leader><Leader> <Plug>(easymotion-prefix)
 map <Leader>j <Plug>(easymotion-prefix)j
 map <Leader>k <Plug>(easymotion-prefix)k
 map <Leader>n <Plug>(easymotion-prefix)n
 map <Leader>N <Plug>(easymotion-prefix)N
-
-" --- editing ---
 
 set autoindent
 
@@ -253,12 +215,10 @@ set tabstop=4
 set expandtab
 set smarttab
 
-" set formatoptions=
-
 " configure backspace so it acts as it should act
 set backspace=eol,start,indent
 
-" make no delay after esc
+" make no delay after like `^<C-V>jI#<Esc>`
 set ttimeoutlen=0
 
 " ,p: toggle paste mode
@@ -285,15 +245,13 @@ autocmd FileType python
 autocmd FileType html
     \ noremap <Leader>i1 i<!DOCTYPE html><CR><CR>
 
-" --- saving ---
-
 " don't backup
 set nobackup
 set nowb
 set noswapfile
 
-" make Ctrl-Z work in insert mode
-" pressing Ctrl-O switches to normal mode for one command
+" make <C-Z> work in insert mode
+" <C-O> for executing a normal-mode command in insert mode
 inoremap <C-Z> <C-O><C-Z>
 
 " save
@@ -309,7 +267,7 @@ noremap <Leader>Z :wa<CR><C-Z>
 " sudo
 noremap <Leader>S :w !sudo tee %:p > /dev/null
 
-" usually we don't wanna go ex mode
+" usually we don't want to go ex mode
 noremap Q :qa!
 noremap <Leader>E Q
 
