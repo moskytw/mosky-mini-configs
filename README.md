@@ -93,7 +93,7 @@ Believe me, you will fall in love with it. 😁
 | Ctrl-P      | Up            | Move by a line       |
 | Ctrl-N      | Down          |                      |
 
-After install, enable it in Preferences > Complex Modifications > Add rule.
+After install, enable it in Preferences / Complex Modifications / Add rule.
 
 You also can install
 [configs/karabiner_bash_emacs.json](https://github.com/moskytw/mosky-mini-configs/blob/master/configs/karabiner_bash_emacs.json)
