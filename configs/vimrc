@@ -1,3 +1,6 @@
+" see https://github.com/junegunn/vim-plug#usage for installing the plugins
+call plug#begin('~/.vim/plugged')
+
 " use % to travel paired tags
 runtime macros/matchit.vim
 
