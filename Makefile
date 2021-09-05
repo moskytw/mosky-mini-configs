@@ -7,8 +7,8 @@ SHELL = /bin/bash
 # the `$$` will become `$`
 USER_IS_MOSKY = $(shell whoami | grep '^mosky$$' -o)
 WITH_VIM_7_x = $(shell vim --version | head -1 2> /dev/null | grep -F 'VIM - Vi IMproved 7.' -o)
-WITH_TMUX_1_x = $(shell tmux -V 2> /dev/null | grep 'tmux 1.' -o)
-WITH_TMUX_2_old = $(shell tmux -V 2> /dev/null | grep 'tmux 2.[1-8]' -o)
+WITH_TMUX_1_x = $(shell tmux -V 2> /dev/null | grep -F 'tmux 1.' -o)
+WITH_TMUX_2_old = $(shell tmux -V 2> /dev/null | grep 'tmux 2\.[1-8]' -o)
 ON_MAC = $(shell uname | grep 'Darwin' -o)
 
 MKDIR = mkdir -p
@@ -61,7 +61,7 @@ ifneq ($(USER_IS_MOSKY),)
 	patch $@ patches/gitconfig_mosky.patch
 endif
 
-build/tmux.conf: configs/tmux.conf patches/tmux.conf_1.x.patch
+build/tmux.conf: configs/tmux.conf patches/tmux.conf*.patch
 	$(CP) $< $@
 ifneq ($(WITH_TMUX_1_x),)
 	patch $@ patches/tmux.conf_2_old.patch
