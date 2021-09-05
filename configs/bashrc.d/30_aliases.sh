@@ -1,14 +1,6 @@
 #!/bin/bash
 
-# bash stuff
-
-alias hi='history'
-
 # text stream rocks!
-
-if [[ "$(uname)" == "Darwin" ]]; then
-    alias zcat='gzcat'
-fi
 
 alias h='head'
 alias t='tail'
@@ -19,7 +11,6 @@ alias a='awk'
 alias x='xargs '
 
 alias grep='grep --color=auto'
-
 alias g='grep'
 # -s: silent
 # -n: line number
@@ -32,11 +23,24 @@ alias gr="g -R \
           --exclude-dir .git \
           -s -n -H"
 
+if [[ "$(uname)" == "Darwin" ]]; then
+    alias zcat='gzcat'
+fi
+
 # file management
 
+# make the behavior consistent between systems
+alias file='file -h'
+
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
+
 alias ls='ls --color=auto'
-alias la='ls -A'  # will be expanded to `ls --color=auto -A`
 alias l='ls -F'
+alias la='ls -A'  # will be expanded to `ls --color=auto -A`
 alias ll='ls -aFh -l'
 
 # grep-style find
@@ -50,12 +54,6 @@ fr() {
          -not -path '*/.git/*' \
          -path "*$1*"
 }
-
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
-alias ......='cd ../../../../..'
 
 alias df='df -h'
 
@@ -80,6 +78,10 @@ alias vihtml="vi +':set ft=html' -"
 alias vijs="vi +':set ft=javascript' -"
 alias vicss="vi +':set ft=css' -"
 alias vijson="vi +':set ft=json' -"
+
+# bash stuff
+
+alias hi='history'
 
 # Python rocks!
 
