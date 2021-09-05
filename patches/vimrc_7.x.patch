@@ -1,0 +1,7 @@
+79,80c79,80
+< " See: https://github.com/mg979/vim-visual-multi .
+< Plug 'mg979/vim-visual-multi'
+---
+> " [vim-visual-multi] Vim version 8 is required
+> " " See: https://github.com/mg979/vim-visual-multi .
+> " Plug 'mg979/vim-visual-multi'

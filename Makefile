@@ -6,6 +6,7 @@ SHELL = /bin/bash
 # use empty string as false, so `ifneq ($VAR,)` === if bool(VAR)
 # the `$$` will become `$`
 USER_IS_MOSKY = $(shell whoami | grep '^mosky$$' -o)
+WITH_VIM_7_x = $(shell vim --version | head -1 2> /dev/null | grep -F 'VIM - Vi IMproved 7.' -o)
 WITH_TMUX_1_x = $(shell tmux -V 2> /dev/null | grep 'tmux 1.' -o)
 WITH_TMUX_2_old = $(shell tmux -V 2> /dev/null | grep 'tmux 2.[1-8]' -o)
 ON_MAC = $(shell uname | grep 'Darwin' -o)
@@ -47,8 +48,11 @@ ifneq ($(ON_MAC),)
 	$(CP) $< $@
 endif
 
-build/vimrc: configs/vimrc
+build/vimrc: configs/vimrc patches/vimrc_*.patch
 	$(CP) $< $@
+ifneq ($(WITH_VIM_7_x),)
+	patch $@ patches/vimrc_7.x.patch
+endif
 
 build/gitconfig: configs/gitconfig \
                   patches/gitconfig_mosky.patch
