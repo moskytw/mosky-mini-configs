@@ -65,13 +65,9 @@ alias du1='du -d 1'
 
 alias rsync='rsync -v -h --progress'
 
-# make the behavior consistent between systems
-alias file='file -h'
-
 # handy highlighting
 
 alias hl='highlight -s solarized-dark -O xterm256'
-alias hls='hl -S'
 alias hlpy='hl -S python'
 alias hlhtml='hl -S html'
 alias hljs='hl -S js'
