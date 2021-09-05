@@ -13,21 +13,14 @@ fi
 alias h='head'
 alias t='tail'
 alias c='cut'  # = cut -dTAB
-alias cds="cut -d' '"
-alias cdc="cut -d:"
-alias cdp="cut -d/"
 alias s='sed'
-alias sn='sed -n'
 alias a='awk'
 # if ends with a space, then the next word is also checked for alias expansion
 alias x='xargs '
-alias xi='xargs -I{} '
 
 alias grep='grep --color=auto'
 
 alias g='grep'
-alias gv='grep -v'
-alias g80='g -E "^.{,80}$" --color=never'
 # -s: silent
 # -n: line number
 # -H: filename
@@ -156,6 +149,3 @@ alias gcob='git checkout -b'
 alias gamend='git commit --amend'
 alias gunstage='git reset HEAD'
 alias guncommit='git reset --soft HEAD^'
-
-# go git root
-alias r='cd `git rev-parse --show-toplevel 2> /dev/null`'
