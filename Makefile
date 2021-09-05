@@ -61,7 +61,7 @@ ifneq ($(USER_IS_MOSKY),)
 	patch $@ patches/gitconfig_mosky.patch
 endif
 
-build/tmux.conf: configs/tmux.conf patches/tmux.conf*.patch
+build/tmux.conf: configs/tmux.conf patches/tmux.conf_*.patch
 	$(CP) $< $@
 ifneq ($(WITH_TMUX_1_x),)
 	patch $@ patches/tmux.conf_2_old.patch
