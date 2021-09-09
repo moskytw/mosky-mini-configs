@@ -21,7 +21,7 @@ CPB = cp
 RMI = rm -rf
 endif
 
-BASHRC_THE_SOURCING_LINE = for path in ~/.bashrc.d/*; do . $$path; done
+BASHRC_THE_SOURCING_LINE = for path in ~/.bashrc.d/*.sh; do . $$path; done
 
 .PHONY: all
 all: build/ \
@@ -105,7 +105,7 @@ endif
 	
 ifneq ($(ON_MAC),)
 	$(MKDIR) ~/.config/karabiner/assets/complex_modifications/
-	$(CPB) build/karabiner_bash_emacs.json ~/.config/karabiner/assets/complex_modifications/bash_emacs.json
+	$(CP) build/karabiner_bash_emacs.json ~/.config/karabiner/assets/complex_modifications/bash_emacs.json
 endif
 
 .PHONY: uninstall
