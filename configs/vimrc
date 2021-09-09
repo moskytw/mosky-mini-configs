@@ -96,6 +96,7 @@ set linebreak
 
 set cursorline
 set showmatch
+set hlsearch
 
 set list
 set listchars=tab:▹\ ,trail:▵
