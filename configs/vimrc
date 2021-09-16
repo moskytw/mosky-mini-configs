@@ -76,7 +76,14 @@ Plug 'terryma/vim-expand-region'
 " yss for entire line
 Plug 'tpope/vim-surround'
 
-" See: https://github.com/mg979/vim-visual-multi .
+" <C-N>: enter the m-normal (cursor) mode
+" n/N  : select the next/previous
+" q    : skip the current
+" Q    : remove the current
+" [/]  : switch among the cursors
+" i, a, I, A, etc.: enter the m-insert mode
+" <Tab>: switch between m-normal (cursor) and m-visual (extend) mode
+" <Esc>: exit the modes
 Plug 'mg979/vim-visual-multi'
 
 call plug#end()
