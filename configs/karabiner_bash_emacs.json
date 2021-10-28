@@ -2,27 +2,6 @@
   "title": "Bash emacs keymap -- based on Emacs key bindings rev 12",
   "rules": [
     {
-      "description": "Map caps_lock to right_control",
-      "manipulators": [
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "caps_lock",
-            "modifiers": {
-              "optional": [
-                "any"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "right_control"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "description": "Bash control characters (control-keys)",
       "manipulators": [
         {
