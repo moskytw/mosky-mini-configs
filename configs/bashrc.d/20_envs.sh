@@ -50,6 +50,9 @@ if [[ "$(uname)" == "Darwin" ]]; then
     PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
     MANPATH="/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH"
 
+    # https://apple.stackexchange.com/a/371998
+    export BASH_SILENCE_DEPRECATION_WARNING=1
+
 fi
 
 # both macOS and Linux
@@ -101,7 +104,3 @@ export CLASSPATH
 
 export LC_ALL
 export LANG
-
-# https://apple.stackexchange.com/a/371998
-
-export BASH_SILENCE_DEPRECATION_WARNING=1
