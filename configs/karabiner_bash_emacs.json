@@ -13,8 +13,7 @@
                 "control"
               ],
               "optional": [
-                "option",
-                "caps_lock"
+                "option"
               ]
             }
           },
@@ -76,9 +75,6 @@
             "modifiers": {
               "mandatory": [
                 "control"
-              ],
-              "optional": [
-                "caps_lock"
               ]
             }
           },
@@ -140,9 +136,6 @@
             "modifiers": {
               "mandatory": [
                 "control"
-              ],
-              "optional": [
-                "caps_lock"
               ]
             }
           },
@@ -206,9 +199,9 @@
                 "control"
               ],
               "optional": [
-                "shift",
-                "caps_lock"
+                "shift"
               ]
+
             }
           },
           "to": [
@@ -269,9 +262,6 @@
             "modifiers": {
               "mandatory": [
                 "control"
-              ],
-              "optional": [
-                "caps_lock"
               ]
             }
           },
@@ -338,9 +328,6 @@
             "modifiers": {
               "mandatory": [
                 "control"
-              ],
-              "optional": [
-                "caps_lock"
               ]
             }
           },
@@ -402,9 +389,6 @@
             "modifiers": {
               "mandatory": [
                 "control"
-              ],
-              "optional": [
-                "caps_lock"
               ]
             }
           },
@@ -466,9 +450,6 @@
             "modifiers": {
               "mandatory": [
                 "control"
-              ],
-              "optional": [
-                "caps_lock"
               ]
             }
           },
@@ -533,9 +514,6 @@
             "modifiers": {
               "mandatory": [
                 "control"
-              ],
-              "optional": [
-                "caps_lock"
               ]
             }
           },
@@ -603,8 +581,7 @@
               ],
               "optional": [
                 "command",
-                "fn",
-                "caps_lock"
+                "fn"
               ]
             }
           },
@@ -669,8 +646,7 @@
               ],
               "optional": [
                 "command",
-                "fn",
-                "caps_lock"
+                "fn"
               ]
             }
           },
@@ -732,9 +708,6 @@
             "modifiers": {
               "mandatory": [
                 "control"
-              ],
-              "optional": [
-                "caps_lock"
               ]
             }
           },
@@ -796,9 +769,6 @@
             "modifiers": {
               "mandatory": [
                 "control"
-              ],
-              "optional": [
-                "caps_lock"
               ]
             }
           },
@@ -863,9 +833,6 @@
             "modifiers": {
               "mandatory": [
                 "control"
-              ],
-              "optional": [
-                "caps_lock"
               ]
             }
           },
@@ -934,9 +901,6 @@
             "modifiers": {
               "mandatory": [
                 "control"
-              ],
-              "optional": [
-                "caps_lock"
               ]
             }
           },
@@ -1012,8 +976,7 @@
                 "option"
               ],
               "optional": [
-                "shift",
-                "caps_lock"
+                "shift"
               ]
             }
           },
@@ -1080,8 +1043,7 @@
                 "option"
               ],
               "optional": [
-                "shift",
-                "caps_lock"
+                "shift"
               ]
             }
           },
@@ -1146,9 +1108,6 @@
             "modifiers": {
               "mandatory": [
                 "option"
-              ],
-              "optional": [
-                "caps_lock"
               ]
             }
           },
