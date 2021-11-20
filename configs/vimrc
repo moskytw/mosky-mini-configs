@@ -65,15 +65,12 @@ Plug 'michaeljsmith/vim-indent-object'
 "       \ }
 Plug 'terryma/vim-expand-region'
 
-" ds"    : "word"      -> word
-" dst    : <a>word</a> -> word
-" cs'"   : 'word'      -> "word"
-" cst<a> : <p>word</p> -> <a>word</a>
 " viwS'  : word        -> 'word'
 " viwS<p>: word        -> <p>word</p>
-" ysiw'  : word        -> 'word'
-" ysiw<p>: word        -> <p>word</p>
-" yss for entire line
+" cs'"   : 'word'      -> "word"
+" cst<a> : <p>word</p> -> <a>word</a>
+" ds"    : "word"      -> word
+" dst    : <a>word</a> -> word
 Plug 'tpope/vim-surround'
 
 " <C-N>: enter the m-normal (cursor) mode
