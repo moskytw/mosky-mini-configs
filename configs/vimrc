@@ -196,6 +196,8 @@ set ignorecase
 " be case-sensitive when contains upper char
 set smartcase
 
+set formatoptions=cq
+
 " ,c: clear search register
 noremap <silent> <Leader>c :let @/ = ''<CR>
 
