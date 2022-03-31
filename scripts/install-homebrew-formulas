@@ -6,6 +6,7 @@ brew install grep
 brew install gnu-sed
 
 brew install ripgrep
+brew install gron
 brew install jq
 brew install highlight
 brew install tree
@@ -14,6 +15,7 @@ brew install git
 brew install tmux
 brew install fsevents-tools
 
+brew install mtr
 brew install nmap
 
 brew install python
