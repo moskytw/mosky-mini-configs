@@ -91,7 +91,8 @@ alias pym2='python2 -m'
 alias pdb2='python2 -m pdb'
 alias ipdb2='python2 -m ipdb'
 alias pip2='pip2'
-alias mypy2='mypy -2'
+# \mypy to use original mypy
+alias mypy2='\mypy -2 --ignore-missing-imports'
 
 alias py3='python3'
 alias pym3='python3 -m'
@@ -99,7 +100,7 @@ alias pdb3='python3 -m pdb'
 alias ipdb3='python3 -m ipdb'
 alias ipy3='ipython3'
 alias pip3='pip3'
-alias mypy3='\mypy'  # use original mypy
+alias mypy3='\mypy --ignore-missing-imports'
 
 alias py='python'
 alias ipy='ipython'
@@ -107,13 +108,17 @@ alias pym='python -m'
 alias pdb='python -m pdb'
 alias ipdb='python -m ipdb'
 alias pip='pip'
-alias mypy='\mypy'  # use original mypy
+alias mypy='\mypy --ignore-missing-imports'
 
 alias pyp='pipenv run python'
 alias ipyp='pipenv run ipython'
 alias pymp='pipenv run python -m'
 alias pdbp='pipenv run python -m pdb'
 alias ipdbp='pipenv run python -m ipdb'
+
+# 79 is used by the standard library
+# I do love single quotes in Python
+alias black='black --line-length 79 --skip-string-normalization'
 
 # Vim rocks!
 
