@@ -1,5 +1,6 @@
 #!/bin/bash
 
+brew install bash
 brew install coreutils
 brew install findutils
 brew install grep
