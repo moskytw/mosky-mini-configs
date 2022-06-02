@@ -68,6 +68,7 @@ if command -v pyenv &> /dev/null; then
     fi
 fi
 PATH="$HOME/.poetry/bin:$PATH"
+PATH="$HOME/.local/bin:$PATH"  # for pipx
 PATH="$HOME/.bin:$PATH"
 PYTHONPATH="$HOME/.pythonpath${PYTHONPATH:+:}$PYTHONPATH"
 PYTHONIOENCODING='utf-8'
