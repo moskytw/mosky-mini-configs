@@ -11,6 +11,7 @@ Plug 'gregsexton/MatchTag'
 Plug 'othree/html5.vim'
 Plug 'moskytw/nginx-contrib-vim'
 Plug 'kchmck/vim-coffee-script'
+Plug 'tomlion/vim-solidity'
 
 " my own color scheme
 Plug 'moskytw/luthadel.vim'
