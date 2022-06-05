@@ -21,6 +21,7 @@ alias gr="g -R \
           --exclude-dir .ipynb_checkpoints \
           --exclude-dir .mypy_cache \
           --exclude-dir .git \
+          --exclude-dir build \
           -s -n -H"
 
 if [[ "$(uname)" == "Darwin" ]]; then
@@ -51,6 +52,7 @@ fn() {
          -not -path '*/.ipynb_checkpoints/*' \
          -not -path '*/.mypy_cache/*' \
          -not -path '*/.git/*' \
+         -not -path '*/build/*' \
          -name "*$1*"
 }
 
