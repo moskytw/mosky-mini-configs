@@ -6,9 +6,9 @@ brew install findutils
 brew install grep
 brew install gnu-sed
 
-brew install ripgrep
+brew install ripgrep  # Ubuntu 18.10 or Debian 10 (Buster)
 brew install gron
-brew install jq
+brew install jq  # Ubuntu 18.04 or Debian 9 (Stretch)
 brew install highlight
 brew install tree
 brew install vim
@@ -19,9 +19,10 @@ brew install fsevents-tools
 brew install mtr
 brew install nmap
 
-brew install bat
-brew install fd
+brew install bat  # Ubuntu 20.04 or Debian 11 (Bullseye)
+brew install fd  # Ubuntu 19.04 or Debian 10 (Buster)
 
+brew install git
 brew install python
 brew install nodejs  # for jupyter labextension install @jupyter-widgets/jupyterlab-manager
 brew install pyenv
