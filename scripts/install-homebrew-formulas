@@ -19,6 +19,8 @@ brew install fsevents-tools
 brew install mtr
 brew install nmap
 
+brew install bat
+
 brew install python
 brew install nodejs  # for jupyter labextension install @jupyter-widgets/jupyterlab-manager
 brew install pyenv
