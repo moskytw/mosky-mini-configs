@@ -66,7 +66,7 @@ alias rsync='rsync -v -h --progress'
 
 # handy highlighting
 
-alias hl='highlight -s solarized-dark -O xterm256'
+alias hl='highlight -s molokai -O xterm256'
 alias hlpy='hl -S python'
 alias hlhtml='hl -S html'
 alias hljs='hl -S js'
