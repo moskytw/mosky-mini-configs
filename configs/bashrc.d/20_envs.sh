@@ -53,6 +53,9 @@ if [[ "$(uname)" == "Darwin" ]]; then
     # https://apple.stackexchange.com/a/371998
     export BASH_SILENCE_DEPRECATION_WARNING=1
 
+    # make `tree` have colors
+    export CLICOLOR=1
+
 fi
 
 # both macOS and Linux
