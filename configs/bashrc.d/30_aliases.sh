@@ -43,16 +43,15 @@ alias l='ls -F'
 alias la='ls -A'  # will be expanded to `ls --color=auto -A`
 alias ll='ls -aFh -l'
 
-# grep-style find
-fr() {
-    find -L \
-         "${@:2}" \
+# fn: from `find -name ...`, a easy version of the fd
+fn() {
+    find "${@:2}" \
          -not -path '*.pyc' \
          -not -path '*/__pycache__/*' \
          -not -path '*/.ipynb_checkpoints/*' \
          -not -path '*/.mypy_cache/*' \
          -not -path '*/.git/*' \
-         -path "*$1*"
+         -name "*$1*"
 }
 
 alias df='df -h'
