@@ -5,24 +5,25 @@ brew install coreutils
 brew install findutils
 brew install grep
 brew install gnu-sed
+brew install vim
+
+brew install tree
+brew install highlight
+brew install tmux
 
 brew install ripgrep  # Ubuntu 18.10 or Debian 10 (Buster)
-brew install gron
-brew install jq  # Ubuntu 18.04 or Debian 9 (Stretch)
-brew install highlight
-brew install tree
-brew install vim
-brew install git
-brew install tmux
-brew install fsevents-tools
-
-brew install mtr
-brew install nmap
-
-brew install bat  # Ubuntu 20.04 or Debian 11 (Bullseye)
 brew install fd  # Ubuntu 19.04 or Debian 10 (Buster)
+brew install bat  # Ubuntu 20.04 or Debian 11 (Bullseye)
+
+brew install jq  # Ubuntu 18.04 or Debian 9 (Stretch)
+brew install gron
 
 brew install git
 brew install python
 brew install nodejs
 brew install pyenv
+
+brew install fsevents-tools  # macOS only
+
+brew install mtr
+brew install nmap
