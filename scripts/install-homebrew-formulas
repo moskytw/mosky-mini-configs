@@ -20,6 +20,7 @@ brew install mtr
 brew install nmap
 
 brew install bat
+brew install fd
 
 brew install python
 brew install nodejs  # for jupyter labextension install @jupyter-widgets/jupyterlab-manager
