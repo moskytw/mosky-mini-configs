@@ -25,7 +25,5 @@ brew install python
 brew install nodejs
 brew install pyenv
 
-brew install fsevents-tools  # macOS only.
-
 brew install mtr
 brew install nmap
