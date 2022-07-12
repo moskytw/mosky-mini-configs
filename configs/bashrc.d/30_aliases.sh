@@ -44,7 +44,7 @@ alias l='ls -F'
 alias la='ls -A'  # will be expanded to `ls --color=auto -A`
 alias ll='ls -aFh -l'
 
-# fn: from `find -name ...`, a easy version of the fd
+# fn: from `find -name ...`, an easy version of the fd
 fn() {
     find "${@:2}" \
          -not -path '*.pyc' \
