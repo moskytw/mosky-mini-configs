@@ -17,6 +17,9 @@ brew install ripgrep  # Also in >= Ubuntu 20.04 and Debian 10.
 # See also the `fn` in *30_aliases.sh*.
 brew install fd  # Also in >= Ubuntu 20.04 and Debian 10.
 
+# See also the `hl` in *30_aliases.sh*.
+brew install bat  # Also in >= Ubuntu 20.04 and Debian 11.
+
 brew install jq  # Also in >= Ubuntu 14.04 and Debian 8.
 brew install gron  # Also in >= Ubuntu 20.04 and Debian 10.
 
