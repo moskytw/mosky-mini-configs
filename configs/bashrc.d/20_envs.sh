@@ -64,7 +64,7 @@ if command -v pyenv &> /dev/null; then
         # TODO: It's slow. Can we make it lazy?
         eval "$(pyenv init -)"
     else
-        # TODO: Is it necessary to export?
+        # https://github.com/pyenv/pyenv#set-up-your-shell-environment-for-pyenv
         export PYENV_ROOT="$HOME/.pyenv"
         PATH="$PYENV_ROOT/bin:$PATH"
         eval "$(pyenv init --path)"
