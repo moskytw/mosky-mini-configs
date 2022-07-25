@@ -61,7 +61,6 @@ fi
 # both macOS and Linux
 if command -v pyenv &> /dev/null; then
     if [[ -n "$(pyenv --version 2> /dev/null | grep 'pyenv 1' -o)" ]]; then
-        # TODO: It's slow. Can we make it lazy?
         eval "$(pyenv init -)"
     else
         # https://github.com/pyenv/pyenv#set-up-your-shell-environment-for-pyenv
