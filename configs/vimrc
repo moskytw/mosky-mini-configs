@@ -138,7 +138,7 @@ set wildignore=*.o,*~,*.pyc
 " * `zM`: close all fold level: foldlevel=0.
 "
 set foldmethod=indent
-set foldnestmax=3
+set foldnestmax=2
 set nofoldenable
 noremap <silent> <Leader>f :set foldenable!<CR>:set foldenable?<CR>
 
