@@ -104,7 +104,7 @@ set showmatch
 set hlsearch
 
 set list
-set listchars=tab:▹\ ,trail:▵
+set listchars=tab:>-,trail:-,nbsp:%,extends:>,precedes:<
 
 " pum: PopUp Menu, the menu by <C-N> in insert mode
 set pumheight=16
