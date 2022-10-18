@@ -195,6 +195,10 @@ set smartcase
 
 set formatoptions=cq
 
+" TODO: remove it; use `,u` instead
+" ,c: clear search register
+noremap <silent> <Leader>c :let @/ = ''<CR>
+
 " ,u: like `ESC u` in `less1 to toggle search highlighting
 noremap <silent> <Leader>u :set hlsearch!<CR>:set hlsearch?<CR>
 
