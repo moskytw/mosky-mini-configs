@@ -142,10 +142,6 @@ set foldnestmax=2
 set nofoldenable
 noremap <silent> <Leader>f :set foldenable!<CR>:set foldenable?<CR>
 
-" stl: status line for current window
-" stlnc: status line for non-current window
-set fillchars=stl:\ ,stlnc:\ ,vert:\ ,fold:\ ,diff:\ 
-
 " fix the mako highlight
 autocmd BufNewFile,BufRead *.mako
     \ setlocal filetype=html
