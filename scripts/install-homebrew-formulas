@@ -5,7 +5,7 @@ brew install coreutils
 brew install less
 brew install grep
 brew install gnu-sed
-# TODO: gawk?
+brew install gawk
 brew install findutils
 brew install vim
 
