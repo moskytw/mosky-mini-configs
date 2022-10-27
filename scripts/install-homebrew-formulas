@@ -3,10 +3,10 @@
 brew install bash
 brew install coreutils
 brew install less
+brew install findutils
 brew install grep
 brew install gnu-sed
 brew install gawk
-brew install findutils
 brew install vim
 
 brew install tree
