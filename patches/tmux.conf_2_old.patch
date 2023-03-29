@@ -11,7 +11,7 @@
 > set-window-option -g window-status-fg colour239
 > set-window-option -g window-status-current-fg colour254
 15,16c15,16
-< set-option -g pane-border-style fg=colour239  # default is white-like
+< set-option -g pane-border-style fg=colour239  # gray-like
 < set-option -g pane-active-border-style fg=default  # white-like
 ---
 > set-option -g pane-border-fg colour239  # default is white-like
