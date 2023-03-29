@@ -4,6 +4,9 @@ call plug#begin('~/.vim/plugged')
 " use % to travel paired tags
 runtime macros/matchit.vim
 
+" 2023 plugins
+Plug 'github/copilot.vim'
+
 " highlight the matched tag
 Plug 'gregsexton/MatchTag'
 
