@@ -283,6 +283,6 @@ noremap <Leader>S :w !sudo tee %:p > /dev/null
 noremap Q :qa!
 noremap <Leader>E Q
 
-" usually we don't want the command line window
-" use c_CTRL-F instead
-noremap q: :q
+" " usually we don't want the command line window
+" " use c_CTRL-F instead
+" noremap q: :q
