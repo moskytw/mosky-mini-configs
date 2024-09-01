@@ -224,7 +224,7 @@ set autoindent
 
 set shiftwidth=4
 set tabstop=4
-autocmd FileType javascript
+autocmd FileType javascript,html
     \ setlocal shiftwidth=2 |
     \ setlocal tabstop=2
 set expandtab
